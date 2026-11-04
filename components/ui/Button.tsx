@@ -92,7 +92,7 @@ export default function Button(props: ButtonProps) {
     onDark = false,
     type = "button",
     ...domProps
-  } = props;
+  } = props as ButtonAsButton;
 
   return (
     <button

@@ -77,7 +77,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="dark-section relative z-0 !overflow-visible lg:z-20">
+    <section className="dark-section relative z-0 !overflow-visible">
       <svg
         className="pointer-events-none absolute inset-x-0 top-10 hidden h-[65%] w-full opacity-35 lg:block"
         viewBox="0 0 1200 700"
@@ -274,7 +274,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative z-30 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-14 lg:translate-x-3 lg:-translate-y-4 xl:translate-x-5 xl:-translate-y-5">
+        <div className="relative z-30 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-8 lg:translate-x-3 lg:-translate-y-2 xl:translate-x-5 xl:-translate-y-3">
           <div
             className="pointer-events-none absolute bottom-0 right-[5%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
             aria-hidden

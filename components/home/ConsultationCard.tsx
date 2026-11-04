@@ -8,9 +8,9 @@ export default function ConsultationCard() {
   return (
     <section
       id="locations"
-      className="relative z-20 scroll-mt-28 lg:z-10 lg:-mt-14"
+      className="relative z-20 scroll-mt-28 lg:-mt-14"
     >
-      {/* Mobile: cream panel + cards sit above doctor’s lower half */}
+      {/* Mobile: cream panel above doctor; desktop: glass card above hero bg */}
       <div className="relative -mt-3 rounded-t-[1.75rem] bg-cream px-4 pb-2 pt-16 shadow-[0_-12px_40px_rgba(11,46,51,0.12)] sm:-mt-4 sm:rounded-t-[2.25rem] sm:px-6 sm:pt-20 md:pt-16 lg:mt-0 lg:rounded-none lg:bg-transparent lg:px-12 lg:pt-0 lg:shadow-none">
         <div className="relative z-20 mx-auto w-full max-w-[1440px]">
           <Reveal>

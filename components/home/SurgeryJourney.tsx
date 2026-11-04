@@ -59,17 +59,17 @@ export default function SurgeryJourney() {
 
         <div ref={trackRef} className="relative">
           <div
-            className="absolute bottom-4 left-7 top-4 w-px bg-gold/20 md:hidden"
+            className="absolute bottom-4 left-7 top-4 w-px bg-gold/20 lg:hidden"
             aria-hidden
           />
           <div
-            className="absolute left-0 right-0 top-7 hidden h-px bg-gold/20 md:block"
+            className="absolute left-0 right-0 top-7 hidden h-px bg-gold/20 lg:block"
             aria-hidden
           />
 
           <motion.div
             aria-hidden
-            className="absolute bottom-4 left-7 top-4 w-px origin-top bg-gold md:hidden"
+            className="absolute bottom-4 left-7 top-4 w-px origin-top bg-gold lg:hidden"
             style={reduceMotion ? undefined : { scaleY: lineScale }}
             initial={false}
             animate={
@@ -79,7 +79,7 @@ export default function SurgeryJourney() {
           />
           <motion.div
             aria-hidden
-            className="absolute left-0 right-0 top-7 hidden h-px origin-left bg-gold md:block"
+            className="absolute left-0 right-0 top-7 hidden h-px origin-left bg-gold lg:block"
             style={reduceMotion ? undefined : { scaleX: lineScale }}
             initial={false}
             animate={
@@ -88,21 +88,21 @@ export default function SurgeryJourney() {
             transition={{ duration: 0.8 }}
           />
 
-          <ol className="relative grid gap-10 md:grid-cols-5 md:gap-4">
+          <ol className="relative grid gap-10 lg:grid-cols-5 lg:gap-4">
             {journeySteps.map((step, index) => {
               const Icon = iconMap[step.icon];
               const lines = step.description.split("\n");
               return (
                 <Reveal key={step.id} delay={0.06 * index}>
-                  <li className="relative flex gap-5 md:flex-col md:gap-0">
-                    <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-cream shadow-soft md:mx-auto md:mb-5">
+                  <li className="relative flex gap-5 lg:flex-col lg:gap-0">
+                    <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-gold bg-cream shadow-soft lg:mx-auto lg:mb-5">
                       <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal-950 text-[11px] font-semibold text-cream">
                         {step.step}
                       </span>
                       <Icon className="h-5 w-5 text-gold-dark" />
                     </div>
-                    <div className="md:text-center">
-                      <h3 className="font-serif text-xl text-heading">
+                    <div className="lg:text-center">
+                      <h3 className="font-serif text-lg text-heading lg:text-xl">
                         {step.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted">

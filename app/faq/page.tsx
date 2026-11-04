@@ -37,12 +37,12 @@ export default function FAQPage() {
       <section className="section-padding">
         <Container className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
           <Reveal>
-            <GlassCard className="px-6 py-2 md:px-8">
+            <GlassCard className="px-4 py-2 sm:px-6 md:px-8">
               <Accordion items={faqs} />
             </GlassCard>
           </Reveal>
           <Reveal delay={0.1}>
-            <aside className="rounded-card bg-teal-hero p-8 text-cream shadow-soft">
+            <aside className="rounded-card bg-teal-hero p-6 text-cream shadow-soft sm:p-8">
               <h2 className="font-serif text-2xl text-cream">
                 Need a personal answer?
               </h2>

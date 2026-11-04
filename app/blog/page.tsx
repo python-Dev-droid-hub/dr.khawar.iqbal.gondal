@@ -46,11 +46,11 @@ export default function BlogPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </Link>
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-dark">
                     {post.category}
                   </p>
-                  <h2 className="mt-3 font-serif text-2xl text-heading">
+                  <h2 className="mt-3 font-serif text-xl text-heading sm:text-2xl">
                     <Link href={`/blog/${post.slug}`} className="hover:text-teal-800">
                       {post.title}
                     </Link>

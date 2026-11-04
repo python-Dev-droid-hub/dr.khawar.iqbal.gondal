@@ -39,8 +39,8 @@ export default function ContactPage() {
       <section className="section-padding">
         <Container className="grid gap-10 lg:grid-cols-2">
           <Reveal>
-            <GlassCard className="p-7 md:p-9">
-              <h2 className="font-serif text-3xl text-heading">
+            <GlassCard className="p-5 sm:p-7 md:p-9">
+              <h2 className="font-serif text-2xl text-heading sm:text-3xl">
                 Request an appointment
               </h2>
               <p className="mt-3 text-sm text-muted">
@@ -55,7 +55,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             {hospitals.map((hospital, index) => (
               <Reveal key={hospital.id} delay={0.06 * index}>
-                <article className="rounded-card border border-teal-950/5 bg-white/80 p-7 shadow-soft">
+                <article className="rounded-card border border-teal-950/5 bg-white/80 p-5 shadow-soft sm:p-7">
                   <h3 className="font-serif text-2xl text-heading">
                     {hospital.name}
                   </h3>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 href={whatsappLink(doctor.whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block rounded-card bg-teal-hero p-7 text-cream shadow-soft transition hover:brightness-110"
+                className="block rounded-card bg-teal-hero p-5 text-cream shadow-soft transition hover:brightness-110 sm:p-7"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-light">
                   WhatsApp

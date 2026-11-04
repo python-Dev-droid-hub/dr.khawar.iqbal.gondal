@@ -28,7 +28,7 @@ export default function PageHero({
   return (
     <section
       className={cn(
-        "relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36",
+        "relative overflow-hidden pb-14 pt-24 sm:pb-16 sm:pt-28 md:pb-24 md:pt-36",
         className,
       )}
     >
@@ -86,7 +86,7 @@ export default function PageHero({
             </div>
           ) : null}
 
-          <h1 className="max-w-3xl break-words-safe font-serif text-3xl leading-[1.12] text-cream sm:text-4xl md:text-5xl lg:text-[3.35rem]">
+          <h1 className="max-w-3xl break-words-safe font-serif text-[1.85rem] leading-[1.12] text-cream min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem]">
             {title}
           </h1>
 

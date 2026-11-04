@@ -50,9 +50,9 @@ export default function TestimonialsCarousel() {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <div className="grid items-center gap-4 md:grid-cols-[0.7fr_1.4fr_0.7fr]">
+            <div className="grid items-center gap-4 lg:grid-cols-[0.7fr_1.4fr_0.7fr]">
               <SideCard
-                className="hidden md:block"
+                className="hidden lg:block"
                 quote={testimonials[prevIndex].quote}
                 name={testimonials[prevIndex].name}
                 faded
@@ -92,7 +92,7 @@ export default function TestimonialsCarousel() {
                           />
                         ))}
                       </div>
-                      <blockquote className="font-serif text-xl leading-relaxed text-heading md:text-2xl">
+                      <blockquote className="font-serif text-lg leading-relaxed text-heading sm:text-xl lg:text-2xl">
                         “{testimonials[active].quote}”
                       </blockquote>
                       <p className="mt-6 text-sm font-semibold text-teal-950">
@@ -107,7 +107,7 @@ export default function TestimonialsCarousel() {
               </div>
 
               <SideCard
-                className="hidden md:block"
+                className="hidden lg:block"
                 quote={testimonials[nextIndex].quote}
                 name={testimonials[nextIndex].name}
                 faded

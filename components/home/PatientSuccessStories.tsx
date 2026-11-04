@@ -18,12 +18,12 @@ export default function PatientSuccessStories() {
           />
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {successStories.map((story, index) => (
             <Reveal key={story.id} delay={0.06 * index}>
               <article className="interactive-card flex h-full flex-col rounded-card border border-teal-950/5 bg-white/80 p-5 shadow-soft sm:p-6 md:p-7">
                 <Badge variant="gold">{story.condition}</Badge>
-                <h3 className="mt-4 font-serif text-2xl text-heading">
+                <h3 className="mt-4 font-serif text-xl text-heading md:text-2xl">
                   {story.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">

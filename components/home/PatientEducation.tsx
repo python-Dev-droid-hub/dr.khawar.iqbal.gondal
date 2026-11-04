@@ -21,7 +21,7 @@ export default function PatientEducation() {
           />
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <Reveal key={post.id} delay={0.05 * index}>
               <article className="interactive-card flex h-full flex-col overflow-hidden rounded-card border border-teal-950/5 bg-white/80 shadow-soft">

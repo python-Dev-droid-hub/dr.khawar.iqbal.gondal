@@ -77,7 +77,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="dark-section relative !overflow-visible">
+    <section className="dark-section relative z-0 !overflow-visible lg:z-20">
       <svg
         className="pointer-events-none absolute inset-x-0 top-10 hidden h-[65%] w-full opacity-35 lg:block"
         viewBox="0 0 1200 700"
@@ -100,29 +100,101 @@ export default function Hero() {
         </defs>
       </svg>
 
-      {/* 3 columns: text | medical scene | doctor */}
+      {/* ========== MOBILE / TABLET (< lg): mockup — text left, scene+doctor right ========== */}
+      <div className="relative mx-auto w-full max-w-[1440px] overflow-visible px-4 sm:px-6 md:px-8 lg:hidden">
+        <div className="relative min-h-[460px] pt-20 sm:min-h-[520px] sm:pt-24 md:min-h-[560px]">
+          {/* Medical scene — behind doctor */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-[18%] left-[28%] right-[-8%] z-10 w-auto opacity-90 sm:top-[16%] sm:left-[32%] sm:right-[-4%] sm:opacity-95"
+          >
+            <Image
+              src={doctor.hero.medicalScene.src}
+              alt=""
+              width={1024}
+              height={682}
+              className="h-auto w-full scale-110 object-contain object-right drop-shadow-[0_16px_32px_rgba(0,0,0,0.35)] sm:scale-105"
+              sizes="60vw"
+              priority
+            />
+          </div>
+
+          {/* Doctor — on top of medical scene; lower half under consultation cards */}
+          <div className="pointer-events-none absolute bottom-8 left-[52%] right-[-14%] z-20 flex h-[95%] max-h-[540px] items-end justify-end sm:bottom-10 sm:left-[54%] sm:right-[-10%] sm:max-h-[620px] md:max-h-[660px]">
+            <div
+              className="absolute bottom-[12%] right-[8%] h-[45%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
+              aria-hidden
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={doctor.portrait.src}
+              alt={doctor.portrait.alt}
+              className="relative -mb-28 block h-full w-full object-contain object-bottom drop-shadow-[0_28px_44px_rgba(0,0,0,0.5)] sm:-mb-32 md:-mb-36"
+            />
+          </div>
+
+          {/* Text + CTAs — left side, clear of imagery */}
+          <div className="relative z-30 w-[54%] max-w-[17.5rem] pb-8 pt-1 sm:w-[52%] sm:max-w-[22rem] sm:pb-10">
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-light sm:mb-3 sm:text-[11px] sm:tracking-[0.22em]">
+              Laparoscopic &amp; General Surgery
+            </p>
+
+            <h1 className="font-serif text-[1.7rem] leading-[1.08] text-cream min-[380px]:text-[1.9rem] min-[420px]:text-[2.1rem] sm:text-[2.45rem] md:text-[2.7rem]">
+              <span className="block">Precision Surgery.</span>
+              <span className="mt-0.5 block text-cream">Faster Recovery.</span>
+            </h1>
+
+            <p className="mt-2.5 text-[13px] leading-relaxed text-cream/75 min-[400px]:text-sm sm:mt-3.5 sm:text-base">
+              Minimally invasive laparoscopic care with advanced techniques.
+            </p>
+
+            <div className="mt-3.5 flex max-w-[15.5rem] flex-col gap-2.5 sm:mt-5 sm:max-w-none sm:flex-row sm:flex-wrap sm:gap-3">
+              <Button href="/book" variant="gold" size="sm" className="w-full justify-center sm:w-auto">
+                Book Appointment
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Button>
+              <Button
+                href={whatsappLink(
+                  doctor.whatsapp,
+                  `Assalamu Alaikum, I would like to speak with ${doctor.name}.`,
+                )}
+                variant="outline"
+                onDark
+                size="sm"
+                className="w-full justify-center sm:w-auto"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppGlyph className="h-4 w-4" />
+                WhatsApp Us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========== DESKTOP (lg+): 3-column stage ========== */}
       <div
         ref={stageRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="relative mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-8 px-6 pb-0 pt-24 lg:min-h-[640px] lg:grid-cols-[34%_42%_24%] lg:items-end lg:gap-0 lg:px-12 lg:pt-28"
+        className="relative mx-auto hidden w-full max-w-[1440px] grid-cols-[34%_42%_24%] items-end gap-0 px-12 pb-0 pt-28 lg:grid lg:min-h-[640px]"
       >
-        {/* LEFT — text */}
-        <div className="relative z-20 max-w-[560px] pb-12 lg:self-center lg:pb-20">
-          <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/90 sm:text-xs sm:tracking-[0.24em]">
+        <div className="relative z-20 max-w-[560px] self-center pb-20">
+          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-cream/90">
             Laparoscopic &amp; General Surgery
             <span
-              className="hidden h-px w-14 bg-gradient-to-r from-cream/45 to-transparent sm:block"
+              className="h-px w-14 bg-gradient-to-r from-cream/45 to-transparent"
               aria-hidden
             />
           </p>
 
-          <h1 className="font-serif text-[2.1rem] leading-[1.1] sm:text-[2.6rem] lg:text-[2.9rem] xl:text-[3.2rem]">
+          <h1 className="font-serif text-[2.9rem] leading-[1.1] xl:text-[3.2rem]">
             <span className="block text-cream">Precision Surgery.</span>
             <span className="mt-1 block text-gold-light">Faster Recovery.</span>
           </h1>
 
-          <p className="mt-5 max-w-[480px] text-base leading-relaxed text-cream/75 md:text-lg">
+          <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-cream/75">
             {doctor.subtitle}
           </p>
 
@@ -152,16 +224,16 @@ export default function Hero() {
               return (
                 <li
                   key={item.id}
-                  className="flex min-w-0 items-center gap-1.5 px-1.5 first:pl-0 last:pr-0 sm:gap-2 sm:px-2.5"
+                  className="flex min-w-0 items-center gap-2 px-2.5 first:pl-0 last:pr-0"
                 >
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold-light">
                     <Icon className="h-2.5 w-2.5" aria-hidden />
                   </span>
                   <span className="min-w-0 whitespace-nowrap leading-tight">
-                    <span className="block text-[10px] font-semibold text-cream sm:text-xs">
+                    <span className="block text-xs font-semibold text-cream">
                       {item.line1}
                     </span>
-                    <span className="block text-[9px] text-cream/70 sm:text-[10px]">
+                    <span className="block text-[10px] text-cream/70">
                       {item.line2}
                     </span>
                   </span>
@@ -171,10 +243,9 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* MIDDLE — medical scene (above contact card; nudged up + left) */}
-        <div className="relative z-30 mx-auto mb-0 w-full max-w-lg self-end lg:mx-0 lg:-mb-6 lg:-translate-x-24 lg:-translate-y-20 lg:max-w-none xl:-translate-x-28 xl:-translate-y-24">
+        <div className="relative z-30 mb-0 w-full self-end lg:-mb-6 lg:-translate-x-24 lg:-translate-y-20 xl:-translate-x-28 xl:-translate-y-24">
           <motion.div
-            className="relative mx-auto w-full origin-center scale-105 lg:w-[112%] lg:scale-110"
+            className="relative w-[112%] origin-center scale-110"
             style={{ x: sceneLayer.tx, y: sceneLayer.ty }}
           >
             <motion.div
@@ -196,21 +267,20 @@ export default function Hero() {
                 width={1024}
                 height={682}
                 className="relative h-auto w-full object-contain object-bottom drop-shadow-[0_24px_48px_rgba(201,161,91,0.2)]"
-                sizes="(min-width: 1024px) 45vw, 95vw"
+                sizes="45vw"
                 priority
               />
             </motion.div>
           </motion.div>
         </div>
 
-        {/* RIGHT — full doctor, bottom flush with hero (meets contact card, no gap) */}
-        <div className="relative z-30 mx-auto flex h-[500px] w-full max-w-[320px] items-end justify-center self-end sm:h-[560px] lg:mx-0 lg:-mb-14 lg:h-[min(680px,92vh)] lg:max-w-none lg:translate-x-3 lg:-translate-y-4 lg:justify-end xl:translate-x-5 xl:-translate-y-5">
+        <div className="relative z-30 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-14 lg:translate-x-3 lg:-translate-y-4 xl:translate-x-5 xl:-translate-y-5">
           <div
-            className="pointer-events-none absolute bottom-0 left-1/2 h-[55%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl lg:left-auto lg:right-[5%] lg:translate-x-0"
+            className="pointer-events-none absolute bottom-0 right-[5%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
             aria-hidden
           />
           <motion.div
-            className="relative flex h-full w-full items-end justify-center lg:justify-end"
+            className="relative flex h-full w-full items-end justify-end"
             style={{ x: doctorLayer.tx, y: doctorLayer.ty }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -22,8 +22,8 @@ export default function HospitalAffiliations() {
         <div className="grid gap-6 md:grid-cols-2">
           {hospitals.map((hospital, index) => (
             <Reveal key={hospital.id} delay={0.06 * index}>
-              <article className="flex h-full flex-col rounded-card border border-teal-950/5 bg-white/80 p-7 shadow-soft">
-                <h3 className="font-serif text-2xl text-heading md:text-3xl">
+              <article className="flex h-full flex-col rounded-card border border-teal-950/5 bg-white/80 p-5 shadow-soft sm:p-7">
+                <h3 className="font-serif text-xl text-heading sm:text-2xl md:text-3xl">
                   {hospital.name}
                 </h3>
                 <ul className="mt-5 flex-1 space-y-3 text-sm text-muted">

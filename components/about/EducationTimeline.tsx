@@ -23,7 +23,7 @@ export default function EducationTimeline() {
             aria-hidden
           />
 
-          <ol className="space-y-8">
+          <ol className="space-y-8 pl-10 md:pl-0">
             {educationTimeline.map((item, index) => {
               const left = index % 2 === 0;
               return (
@@ -36,11 +36,11 @@ export default function EducationTimeline() {
                           : "md:col-start-2"
                       }
                     >
-                      <article className="rounded-card border border-teal-950/5 bg-white/80 p-6 shadow-soft">
+                      <article className="rounded-card border border-teal-950/5 bg-white/80 p-5 shadow-soft sm:p-6">
                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark">
                           {item.year}
                         </p>
-                        <h3 className="mt-2 font-serif text-2xl text-heading">
+                        <h3 className="mt-2 font-serif text-xl text-heading sm:text-2xl">
                           {item.title}
                         </h3>
                         <p className="mt-1 text-sm font-medium text-teal-800">

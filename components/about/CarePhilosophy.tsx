@@ -67,7 +67,7 @@ export default function CarePhilosophy() {
           </figure>
         </Reveal>
 
-        <div className="mt-6 grid gap-4 md:mt-8 md:grid-cols-3 md:gap-5">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 md:mt-8 md:gap-5 lg:grid-cols-3">
           {carePhilosophy.pillars.map((pillar, index) => {
             const Icon = iconMap[pillar.icon];
 

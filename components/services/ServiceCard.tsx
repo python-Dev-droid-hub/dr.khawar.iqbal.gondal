@@ -17,7 +17,7 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
     <Link
       href={`/services/${service.slug}`}
       className={cn(
-        "group relative flex h-full min-h-[240px] flex-col overflow-hidden rounded-card p-5 shadow-soft transition duration-300 hover:-translate-y-1 md:min-h-[280px] md:p-6",
+        "group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-card p-4 shadow-soft transition duration-300 hover:-translate-y-1 sm:min-h-[240px] sm:p-5 md:min-h-[280px] md:p-6",
         isFeatured
           ? "dark-section hover:shadow-[0_18px_40px_rgba(201,161,91,0.22)]"
           : "interactive-card border border-teal-950/5 bg-cream-dark/50 hover:border-gold/35 hover:bg-white",
@@ -36,10 +36,19 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
           className={cn(
             "absolute object-contain transition duration-500 group-hover:scale-105",
             isFeatured
-              ? "-right-8 top-0 h-[92%] w-auto max-w-[78%] opacity-45 group-hover:opacity-60"
-              : "-right-6 bottom-0 top-8 m-auto h-[78%] w-auto max-w-[72%] opacity-85 group-hover:opacity-100",
+              ? "-right-10 top-0 h-[88%] w-auto max-w-[68%] opacity-35 sm:-right-8 sm:max-w-[78%] sm:opacity-45 group-hover:opacity-60"
+              : "-right-10 bottom-0 top-10 m-auto h-[70%] w-auto max-w-[58%] opacity-45 sm:-right-6 sm:top-8 sm:h-[78%] sm:max-w-[72%] sm:opacity-75 md:opacity-85 group-hover:opacity-100",
           )}
-          sizes="(max-width: 768px) 70vw, 320px"
+          sizes="(max-width: 640px) 50vw, (max-width: 768px) 60vw, 320px"
+        />
+        {/* Soft fade so copy stays readable over art on mobile */}
+        <div
+          className={cn(
+            "absolute inset-y-0 left-0 w-[72%] sm:w-[55%] md:w-[48%]",
+            isFeatured
+              ? "bg-gradient-to-r from-[rgb(11_46_51)] via-[rgb(11_46_51/0.85)] to-transparent"
+              : "bg-gradient-to-r from-cream-dark/95 via-cream-dark/80 to-transparent",
+          )}
         />
       </div>
 
@@ -72,18 +81,18 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
 
         <h3
           className={cn(
-            "mt-4 max-w-[58%] font-serif",
+            "mt-4 max-w-[70%] font-serif sm:max-w-[65%] md:max-w-[58%]",
             isFeatured
-              ? "text-2xl text-cream md:text-[1.65rem]"
-              : "text-xl text-heading md:text-[1.35rem]",
+              ? "text-xl text-cream sm:text-2xl md:text-[1.65rem]"
+              : "text-lg text-heading sm:text-xl md:text-[1.35rem]",
           )}
         >
           {service.title}
         </h3>
         <p
           className={cn(
-            "mt-2 max-w-[55%] line-clamp-3 text-sm leading-relaxed",
-            isFeatured ? "text-cream/75" : "text-muted",
+            "mt-2 max-w-[68%] line-clamp-3 text-sm leading-relaxed sm:max-w-[62%] md:max-w-[55%]",
+            isFeatured ? "text-cream/80" : "text-teal-950/70",
           )}
         >
           {service.summary}

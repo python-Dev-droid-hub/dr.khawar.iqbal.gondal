@@ -29,7 +29,7 @@ export default function TechnologyFacilities() {
           />
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {facilities.map((facility, index) => {
             const Icon = iconMap[facility.icon];
             return (

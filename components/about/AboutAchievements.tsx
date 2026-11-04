@@ -23,7 +23,7 @@ export default function AboutAchievements() {
             <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
               {aboutAchievements.map((stat) => (
                 <div key={stat.id} className="text-center">
-                  <p className="font-serif text-4xl text-cream md:text-5xl">
+                  <p className="font-serif text-3xl text-cream sm:text-4xl md:text-5xl">
                     <AnimatedCounter
                       value={stat.value}
                       decimals={stat.decimals ?? 0}

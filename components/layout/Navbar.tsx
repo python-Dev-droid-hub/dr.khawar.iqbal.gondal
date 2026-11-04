@@ -65,7 +65,7 @@ export default function Navbar() {
             alt="Dr. Khawar Laparoscopy & Surgical Centre"
             width={926}
             height={343}
-            className="h-11 w-auto max-w-[200px] object-contain min-[400px]:h-12 min-[400px]:max-w-[240px] md:h-14 md:max-w-[300px] lg:h-[3.75rem] lg:max-w-[340px]"
+            className="h-11 w-auto max-w-[200px] object-contain min-[400px]:h-12 min-[400px]:max-w-[240px] md:h-12 md:max-w-[240px] lg:h-[3.75rem] lg:max-w-[340px]"
             sizes="(max-width: 768px) 240px, 340px"
             priority
           />
@@ -111,7 +111,7 @@ export default function Navbar() {
             href="/book"
             variant="gold"
             size="sm"
-            className="hidden sm:inline-flex md:px-5 md:py-2.5 md:text-sm"
+            className="hidden lg:inline-flex lg:px-5 lg:py-2.5 lg:text-sm"
           >
             Book Appointment
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -160,7 +160,7 @@ export default function Navbar() {
                         href={item.href}
                         onClick={() => setOpen(false)}
                         className={cn(
-                          "block border-b border-teal-950/8 py-4 font-serif text-3xl text-heading",
+                          "block border-b border-teal-950/8 py-4 font-serif text-2xl text-heading sm:text-3xl",
                           active && "text-gold-dark",
                         )}
                       >

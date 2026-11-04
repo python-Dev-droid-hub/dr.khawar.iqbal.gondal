@@ -43,7 +43,7 @@ export default function FinalCTA() {
             </motion.svg>
 
             <div className="relative z-10 mx-auto max-w-2xl">
-              <h2 className="font-serif text-3xl text-cream md:text-4xl lg:text-5xl">
+              <h2 className="font-serif text-2xl text-cream sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the first step toward better health
               </h2>
               <p className="mt-4 text-sm text-cream/75 md:text-base">

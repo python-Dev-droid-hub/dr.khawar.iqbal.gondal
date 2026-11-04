@@ -65,7 +65,7 @@ export default function SectionHeading({
 
       <TitleTag
         className={cn(
-          "text-3xl leading-tight md:text-4xl lg:text-[2.75rem]",
+          "text-2xl leading-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]",
           light ? "text-cream" : "text-heading",
         )}
       >
@@ -75,7 +75,7 @@ export default function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed md:text-lg",
+            "mt-3 text-sm leading-relaxed sm:mt-4 sm:text-base md:text-lg",
             light ? "text-cream/75" : "text-muted",
           )}
         >

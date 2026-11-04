@@ -16,7 +16,7 @@ export default function ReviewsGrid() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark">
                 Patient reviews
               </p>
-              <h2 className="mt-2 font-serif text-3xl text-heading md:text-4xl">
+              <h2 className="mt-2 font-serif text-2xl text-heading sm:text-3xl md:text-4xl">
                 What patients say
               </h2>
             </div>

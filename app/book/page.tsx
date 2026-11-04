@@ -7,11 +7,16 @@ import PageHero from "@/components/shared/PageHero";
 import Reveal from "@/components/motion/Reveal";
 
 import { pageBanners } from "@/data/pageBanners";
+import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Book Appointment — Laparoscopic Surgeon Gujrat";
+const pageDescription = `Book a consultation with ${doctor.name} for gallbladder surgery, hernia repair, and laparoscopic care in Gujrat or Mandi Bahauddin.`;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Book Appointment — Laparoscopic Surgeon Gujrat",
-  description: `Book a consultation with ${doctor.name} for gallbladder surgery, hernia repair, and laparoscopic care in Gujrat or Mandi Bahauddin.`,
+  title: pageTitle,
+  description: pageDescription,
   path: "/book",
   keywords: ["book laparoscopic surgeon Gujrat", "surgery appointment Mandi Bahauddin"],
 });
@@ -19,6 +24,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function BookPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/book",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Book", path: "/book" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="Appointments"
         title="Book a consultation"

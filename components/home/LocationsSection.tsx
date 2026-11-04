@@ -47,15 +47,17 @@ export default function LocationsSection() {
                       <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                       {hospital.scheduleDetail}
                     </li>
-                    <li className="flex gap-3">
-                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      <a
-                        href={hospital.phoneHref}
-                        className="font-medium text-teal-950 hover:text-gold-dark"
-                      >
-                        {hospital.phone}
-                      </a>
-                    </li>
+                    {hospital.phones.map((entry) => (
+                      <li key={entry.phoneHref} className="flex gap-3">
+                        <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                        <a
+                          href={entry.phoneHref}
+                          className="font-medium text-teal-950 hover:text-gold-dark"
+                        >
+                          {entry.phone}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Button

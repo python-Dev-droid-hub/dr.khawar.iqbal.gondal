@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/data/posts";
-import { services } from "@/data/services";
+import { servicePath, services } from "@/data/services";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
-    url: absoluteUrl(`/services/${service.slug}`),
+    url: absoluteUrl(servicePath(service.slug)),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.8,

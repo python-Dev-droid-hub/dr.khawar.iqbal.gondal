@@ -3,18 +3,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { doctor } from "@/data/doctor";
 import { hospitals } from "@/data/hospitals";
 import { mainNav } from "@/data/navigation";
+import {
+  isServiceSlug,
+  servicePath,
+  services,
+} from "@/data/services";
 import { cn } from "@/lib/utils";
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
+  if (href === "/services") {
+    return (
+      pathname === "/services" ||
+      pathname.startsWith("/services/") ||
+      isServiceSlug(pathname.replace(/^\//, ""))
+    );
+  }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -23,6 +35,10 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const servicesMenuId = useId();
+  const servicesWrapRef = useRef<HTMLDivElement>(null);
   const isHome = pathname === "/";
 
   useEffect(() => {
@@ -34,6 +50,8 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -43,7 +61,28 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    const onPointerDown = (event: MouseEvent) => {
+      if (!servicesWrapRef.current?.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setServicesOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
+
   const solid = scrolled || !isHome || open;
+  const servicesActive = isActivePath(pathname, "/services");
 
   return (
     <>
@@ -66,6 +105,7 @@ export default function Navbar() {
             <Image
               src={solid ? "/images/logo.png" : "/images/logo-on-dark.png"}
               alt="Dr. Khawar Laparoscopy & Surgical Centre"
+              title="Dr. Khawar Laparoscopy & Surgical Centre"
               width={926}
               height={343}
               className="h-11 w-auto max-w-[200px] object-contain min-[400px]:h-12 min-[400px]:max-w-[240px] md:h-12 md:max-w-[240px] lg:h-[3.75rem] lg:max-w-[340px]"
@@ -79,6 +119,106 @@ export default function Navbar() {
             aria-label="Primary"
           >
             {mainNav.map((item) => {
+              if (item.href === "/services") {
+                return (
+                  <div
+                    key={item.href}
+                    ref={servicesWrapRef}
+                    className="relative"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <button
+                      type="button"
+                      className={cn(
+                        "relative inline-flex items-center gap-1 px-2.5 py-2 text-sm font-medium transition",
+                        solid
+                          ? servicesActive
+                            ? "text-teal-950"
+                            : "text-muted hover:text-teal-950"
+                          : servicesActive
+                            ? "text-cream"
+                            : "text-cream/75 hover:text-cream",
+                      )}
+                      aria-expanded={servicesOpen}
+                      aria-haspopup="menu"
+                      aria-controls={servicesMenuId}
+                      onClick={() => setServicesOpen((value) => !value)}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={cn(
+                          "h-3.5 w-3.5 transition-transform",
+                          servicesOpen && "rotate-180",
+                        )}
+                        aria-hidden
+                      />
+                      <span
+                        className={cn(
+                          "absolute inset-x-2.5 -bottom-0.5 h-0.5 rounded-full bg-gold transition-opacity",
+                          servicesActive || servicesOpen
+                            ? "opacity-100"
+                            : "opacity-0",
+                        )}
+                        aria-hidden
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {servicesOpen ? (
+                        <motion.div
+                          id={servicesMenuId}
+                          role="menu"
+                          aria-label="Surgical services"
+                          initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={reduceMotion ? undefined : { opacity: 0, y: 4 }}
+                          transition={{ duration: 0.16 }}
+                          className="absolute left-0 top-full z-[70] w-64 pt-2"
+                        >
+                          <div className="overflow-hidden rounded-xl border border-teal-950/10 bg-cream py-2 shadow-[0_12px_32px_rgba(11,46,51,0.14)]">
+                            <Link
+                              href="/services"
+                              role="menuitem"
+                              className="mx-2 mb-1 block rounded-lg px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-gold-dark hover:bg-teal-950/[0.04]"
+                              onClick={() => setServicesOpen(false)}
+                            >
+                              All services
+                            </Link>
+                            <div className="mx-3 mb-1 h-px bg-teal-950/8" aria-hidden />
+                            <ul>
+                              {services.map((service) => {
+                                const href = servicePath(service.slug);
+                                const active =
+                                  pathname === href ||
+                                  pathname === `/services/${service.slug}`;
+                                return (
+                                  <li key={service.slug}>
+                                    <Link
+                                      href={href}
+                                      role="menuitem"
+                                      className={cn(
+                                        "block px-5 py-2.5 text-sm transition",
+                                        active
+                                          ? "bg-gold/10 font-semibold text-teal-950"
+                                          : "text-muted hover:bg-teal-950/[0.04] hover:text-heading",
+                                      )}
+                                      onClick={() => setServicesOpen(false)}
+                                    >
+                                      {service.shortTitle}
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               const active = isActivePath(pathname, item.href);
               return (
                 <Link
@@ -139,7 +279,6 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* Outside header so backdrop-filter does not trap position:fixed */}
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -151,8 +290,81 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
           >
             <Container className="flex h-full min-h-dvh flex-col pb-10 pt-24">
-              <nav className="flex flex-1 flex-col gap-1" aria-label="Mobile">
+              <nav className="flex flex-1 flex-col gap-1 overflow-y-auto" aria-label="Mobile">
                 {mainNav.map((item, index) => {
+                  if (item.href === "/services") {
+                    return (
+                      <motion.div
+                        key={item.href}
+                        initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.04 * index, duration: 0.3 }}
+                        className="border-b border-teal-950/8"
+                      >
+                        <button
+                          type="button"
+                          className={cn(
+                            "flex w-full items-center justify-between py-4 font-serif text-2xl text-heading sm:text-3xl",
+                            servicesActive && "text-gold-dark",
+                          )}
+                          aria-expanded={mobileServicesOpen}
+                          onClick={() =>
+                            setMobileServicesOpen((value) => !value)
+                          }
+                        >
+                          {item.label}
+                          <ChevronDown
+                            className={cn(
+                              "h-5 w-5 text-muted transition-transform",
+                              mobileServicesOpen && "rotate-180",
+                            )}
+                            aria-hidden
+                          />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {mobileServicesOpen ? (
+                            <motion.div
+                              initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
+                              transition={{ duration: 0.22 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="space-y-0.5 pb-4">
+                                <Link
+                                  href="/services"
+                                  onClick={() => setOpen(false)}
+                                  className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-gold-dark"
+                                >
+                                  All services
+                                </Link>
+                                {services.map((service) => {
+                                  const href = servicePath(service.slug);
+                                  const active = pathname === href;
+                                  return (
+                                    <Link
+                                      key={service.slug}
+                                      href={href}
+                                      onClick={() => setOpen(false)}
+                                      className={cn(
+                                        "block rounded-lg px-3 py-2.5 text-base",
+                                        active
+                                          ? "bg-gold/10 font-semibold text-heading"
+                                          : "text-muted hover:bg-teal-950/[0.04] hover:text-heading",
+                                      )}
+                                    >
+                                      {service.shortTitle}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </motion.div>
+                    );
+                  }
+
                   const active = isActivePath(pathname, item.href);
                   return (
                     <motion.div
@@ -183,17 +395,24 @@ export default function Navbar() {
                 </Button>
                 <div className="grid gap-3">
                   {hospitals.map((hospital) => (
-                    <a
+                    <div
                       key={hospital.id}
-                      href={hospital.phoneHref}
-                      className="flex items-center gap-3 rounded-2xl border border-teal-950/10 bg-white px-4 py-3 text-sm text-teal-950"
+                      className="rounded-2xl border border-teal-950/10 bg-white px-4 py-3 text-sm text-teal-950"
                     >
-                      <Phone className="h-4 w-4 text-gold" aria-hidden />
-                      <span>
-                        <span className="block font-medium">{hospital.name}</span>
-                        <span className="text-muted">{hospital.phone}</span>
-                      </span>
-                    </a>
+                      <p className="font-medium">{hospital.name}</p>
+                      <div className="mt-2 space-y-1.5">
+                        {hospital.phones.map((entry) => (
+                          <a
+                            key={entry.phoneHref}
+                            href={entry.phoneHref}
+                            className="flex items-center gap-2 text-muted hover:text-heading"
+                          >
+                            <Phone className="h-3.5 w-3.5 text-gold" aria-hidden />
+                            {entry.phone}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

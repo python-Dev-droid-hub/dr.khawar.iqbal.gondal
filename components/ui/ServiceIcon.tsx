@@ -1,29 +1,29 @@
 import {
   Activity,
-  CircleDot,
+  HeartPulse,
   Hospital,
   Scissors,
+  Shield,
   Stethoscope,
-  Syringe,
+  type LucideIcon,
 } from "lucide-react";
-import type { Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
-const iconMap = {
+const iconMap: Record<string, LucideIcon> = {
   laparoscopic: Scissors,
-  gallbladder: CircleDot,
-  hernia: Activity,
-  appendix: Syringe,
-  digestive: Stethoscope,
+  proctology: Shield,
+  headNeck: Stethoscope,
+  breast: HeartPulse,
+  abdominal: Activity,
   general: Hospital,
-} as const;
+};
 
 type ServiceIconProps = {
-  name: Service["icon"];
+  name: string;
   className?: string;
 };
 
 export default function ServiceIcon({ name, className }: ServiceIconProps) {
-  const Icon = iconMap[name];
+  const Icon = iconMap[name] ?? Scissors;
   return <Icon className={cn("h-5 w-5 text-gold", className)} aria-hidden />;
 }

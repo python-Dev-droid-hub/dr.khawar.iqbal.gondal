@@ -16,7 +16,7 @@ export const doctor = {
     "Minimally invasive laparoscopic care with advanced techniques and compassionate care.",
   bio: "Dr. Khawar Iqbal Gondal is a laparoscopic and general surgeon serving patients across Gujrat and Mandi Bahauddin. He specializes in minimally invasive techniques that reduce hospital stay, minimize scarring, and support faster recovery — with clear communication at every step of care.",
   aboutExtended: [
-    "With over 15 years of surgical experience and more than 1,000 successful procedures, Dr. Khawar combines precise technique with a calm, patient-first approach. His practice emphasizes evidence-based laparoscopic surgery for gallbladder, hernia, appendix, and digestive tract conditions.",
+    "With over 15 years of surgical experience and more than 1,000 successful procedures, Dr. Khawar combines precise technique with a calm, patient-first approach. He previously served as Registrar in Surgery at Services Hospital and Senior Registrar in Surgery at Mayo Hospital, and has worked as Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.",
     "Patients are seen at Shifa Hospital (Gujrat) and Tarar Hospital (Mandi Bahauddin), with flexible weekday and weekend consultation hours. Whether you need a second opinion or are preparing for surgery, you can expect thorough evaluation, honest guidance, and attentive follow-up.",
   ],
   specialties: [

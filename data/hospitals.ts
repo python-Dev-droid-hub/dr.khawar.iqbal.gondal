@@ -1,3 +1,8 @@
+export type HospitalPhone = {
+  phone: string;
+  phoneHref: string;
+};
+
 export type Hospital = {
   id: string;
   name: string;
@@ -5,11 +10,25 @@ export type Hospital = {
   address: string;
   schedule: string;
   scheduleDetail: string;
+  /** Primary number for schema / WhatsApp defaults */
   phone: string;
   phoneHref: string;
+  /** All numbers shown on hospital cards */
+  phones: HospitalPhone[];
   mapsUrl: string;
   mapsEmbed: string;
 };
+
+export const clinicPhones: HospitalPhone[] = [
+  {
+    phone: "+92 326 6493614",
+    phoneHref: "tel:+923266493614",
+  },
+  {
+    phone: "+92 371 6528331",
+    phoneHref: "tel:+923716528331",
+  },
+];
 
 export const hospitals: Hospital[] = [
   {
@@ -19,8 +38,9 @@ export const hospitals: Hospital[] = [
     address: "Jail Road, Gujrat",
     schedule: "Mon to Fri",
     scheduleDetail: "Monday to Friday — consultation hours available",
-    phone: "+92 326 6493614",
-    phoneHref: "tel:+923266493614",
+    phone: clinicPhones[0].phone,
+    phoneHref: clinicPhones[0].phoneHref,
+    phones: clinicPhones,
     mapsUrl: "https://maps.google.com/?q=Shifa+Hospital+Jail+Road+Gujrat",
     mapsEmbed:
       "https://maps.google.com/maps?q=Shifa%20Hospital%20Jail%20Road%20Gujrat&t=&z=15&ie=UTF8&iwloc=&output=embed",
@@ -32,8 +52,9 @@ export const hospitals: Hospital[] = [
     address: "Mandi Bahauddin",
     schedule: "Sat from 4 PM · Sun from 10 AM",
     scheduleDetail: "Saturday from 4:00 PM · Sunday from 10:00 AM",
-    phone: "+92 371 6528331",
-    phoneHref: "tel:+923716528331",
+    phone: clinicPhones[1].phone,
+    phoneHref: clinicPhones[1].phoneHref,
+    phones: clinicPhones,
     mapsUrl: "https://maps.google.com/?q=Tarar+Hospital+Mandi+Bahauddin",
     mapsEmbed:
       "https://maps.google.com/maps?q=Tarar%20Hospital%20Mandi%20Bahauddin&t=&z=15&ie=UTF8&iwloc=&output=embed",

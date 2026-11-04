@@ -32,6 +32,7 @@ export default function PatientEducation() {
                   <Image
                     src={post.image.src}
                     alt={post.image.alt}
+                    title={post.image.title}
                     fill
                     className="object-cover transition duration-500 hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"

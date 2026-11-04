@@ -47,13 +47,32 @@ export const educationTimeline: TimelineItem[] = [
     description:
       "Continued training in minimally invasive techniques for gallbladder, hernia, appendix, and selected GI procedures.",
   },
+];
+
+export const experienceTimeline: TimelineItem[] = [
   {
-    id: "edu-4",
-    year: "Practice",
-    title: "Consultant Surgical Practice",
-    place: "Gujrat & Mandi Bahauddin",
+    id: "exp-1",
+    year: "Registrar",
+    title: "Ex-Registrar, Surgery",
+    place: "Services Hospital",
     description:
-      "Independent consultant practice with dual-hospital clinics and a laparoscopic-first approach where suitable.",
+      "Surgical registrar experience with exposure to elective and emergency operative care in a high-volume teaching hospital setting.",
+  },
+  {
+    id: "exp-2",
+    year: "Senior Registrar",
+    title: "Ex-Senior Registrar, Surgery",
+    place: "Mayo Hospital",
+    description:
+      "Senior registrar role focused on complex general surgery cases, perioperative decision-making, and supervised operative leadership.",
+  },
+  {
+    id: "exp-3",
+    year: "Since 2012",
+    title: "Consultant Surgeon",
+    place: "Aziz Bhatti Shaheed Hospital",
+    description:
+      "Serving as consultant surgeon since 2012, providing laparoscopic and general surgical care with a patient-first approach.",
   },
 ];
 

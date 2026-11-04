@@ -17,6 +17,12 @@ type PageMetaInput = {
   path?: string;
   keywords?: string[];
   noIndex?: boolean;
+  /** Open Graph type — use "article" for blog posts */
+  type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
 export function absoluteUrl(path = "/") {
@@ -30,9 +36,19 @@ export function createPageMetadata({
   path = "/",
   keywords = [],
   noIndex = false,
+  type = "website",
+  image,
+  imageAlt,
+  publishedTime,
+  modifiedTime,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
-  const ogImage = absoluteUrl("/opengraph-image");
+  const ogImage = image
+    ? image.startsWith("http")
+      ? image
+      : absoluteUrl(image)
+    : absoluteUrl("/opengraph-image");
+  const ogAlt = imageAlt || `${doctor.name} — ${doctor.title}`;
 
   return {
     title,
@@ -45,11 +61,14 @@ export function createPageMetadata({
       doctor.name,
       ...keywords,
     ],
+    authors: [{ name: doctor.name, url: absoluteUrl("/about") }],
+    creator: doctor.name,
+    publisher: doctor.name,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      type: "website",
+      type,
       locale: siteConfig.locale,
       url,
       siteName: `${doctor.name} | ${doctor.title}`,
@@ -60,12 +79,21 @@ export function createPageMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${doctor.name} — ${doctor.title}`,
+          alt: ogAlt,
         },
       ],
+      ...(type === "article"
+        ? {
+            publishedTime,
+            modifiedTime: modifiedTime || publishedTime,
+            authors: [doctor.name],
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
+      site: siteConfig.twitterHandle,
+      creator: siteConfig.twitterHandle,
       title,
       description,
       images: [ogImage],

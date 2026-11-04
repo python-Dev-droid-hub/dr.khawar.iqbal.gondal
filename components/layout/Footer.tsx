@@ -62,6 +62,7 @@ export default function Footer() {
                 <Image
                   src="/images/logo-on-dark.png"
                   alt="Dr. Khawar Laparoscopy & Surgical Centre"
+                  title="Dr. Khawar Laparoscopy & Surgical Centre — Gujrat & Mandi Bahauddin"
                   width={926}
                   height={343}
                   className="h-14 w-auto max-w-[280px] object-contain md:h-16 md:max-w-[340px]"
@@ -138,9 +139,9 @@ export default function Footer() {
               <h3 className="font-serif text-xl text-cream">Our Services</h3>
               <ul className="mt-5 space-y-3">
                 {services.slice(0, 6).map((service) => (
-                  <li key={service.id}>
+                  <li key={service.slug}>
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={`/${service.slug}`}
                       className="text-sm text-cream/70 transition hover:text-gold"
                     >
                       {service.shortTitle}
@@ -174,12 +175,17 @@ export default function Footer() {
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                     <span>
                       <span className="block text-cream">{hospital.name}</span>
-                      <a
-                        href={hospital.phoneHref}
-                        className="transition hover:text-gold"
-                      >
-                        {hospital.phone}
-                      </a>
+                      <span className="mt-1 flex flex-col gap-0.5">
+                        {hospital.phones.map((entry) => (
+                          <a
+                            key={entry.phoneHref}
+                            href={entry.phoneHref}
+                            className="transition hover:text-gold"
+                          >
+                            {entry.phone}
+                          </a>
+                        ))}
+                      </span>
                     </span>
                   </li>
                 ))}
@@ -219,15 +225,17 @@ export default function Footer() {
                       <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                       <span>{hospital.scheduleDetail}</span>
                     </li>
-                    <li className="flex gap-3">
-                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      <a
-                        href={hospital.phoneHref}
-                        className="transition hover:text-gold"
-                      >
-                        {hospital.phone}
-                      </a>
-                    </li>
+                    {hospital.phones.map((entry) => (
+                      <li key={entry.phoneHref} className="flex gap-3">
+                        <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                        <a
+                          href={entry.phoneHref}
+                          className="transition hover:text-gold"
+                        >
+                          {entry.phone}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </article>
               ))}

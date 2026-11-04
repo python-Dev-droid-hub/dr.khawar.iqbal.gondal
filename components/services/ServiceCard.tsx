@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import ServiceIcon from "@/components/ui/ServiceIcon";
-import type { Service } from "@/data/services";
+import { servicePath, type Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
 type ServiceCardProps = {
@@ -11,11 +11,11 @@ type ServiceCardProps = {
 };
 
 export default function ServiceCard({ service, className }: ServiceCardProps) {
-  const isFeatured = Boolean(service.featured);
+  const isFeatured = service.slug === "laparoscopic-surgery";
 
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={servicePath(service.slug)}
       className={cn(
         "group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-card p-4 shadow-soft transition duration-300 hover:-translate-y-1 sm:min-h-[240px] sm:p-5 md:min-h-[280px] md:p-6",
         isFeatured
@@ -29,10 +29,11 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
         <Image
-          src={service.image.src}
+          src={service.image}
           alt=""
           width={520}
           height={520}
+          // Decorative: title/tagline adjacent; empty alt avoids duplicate announcement
           className={cn(
             "absolute object-contain transition duration-500 group-hover:scale-105",
             isFeatured
@@ -95,7 +96,7 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
             isFeatured ? "text-cream/80" : "text-teal-950/70",
           )}
         >
-          {service.summary}
+          {service.tagline}
         </p>
 
         <span

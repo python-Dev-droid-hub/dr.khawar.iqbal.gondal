@@ -10,11 +10,16 @@ import Reveal from "@/components/motion/Reveal";
 import { whatsappLink } from "@/lib/utils";
 
 import { pageBanners } from "@/data/pageBanners";
+import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Contact Laparoscopic Surgeon in Gujrat & Mandi Bahauddin";
+const pageDescription = `Contact ${doctor.name} at Shifa Hospital Gujrat or Tarar Hospital Mandi Bahauddin for appointments and surgical consultations.`;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Contact Laparoscopic Surgeon in Gujrat & Mandi Bahauddin",
-  description: `Contact ${doctor.name} at Shifa Hospital Gujrat or Tarar Hospital Mandi Bahauddin for appointments and surgical consultations.`,
+  title: pageTitle,
+  description: pageDescription,
   path: "/contact",
   keywords: [
     "surgeon contact Gujrat",
@@ -25,6 +30,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/contact",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="Contact"
         title="Get in touch"
@@ -68,12 +84,14 @@ export default function ContactPage() {
                       <Clock3 className="mt-0.5 h-4 w-4 text-gold" />
                       {hospital.scheduleDetail}
                     </li>
-                    <li className="flex gap-3">
-                      <Phone className="mt-0.5 h-4 w-4 text-gold" />
-                      <a href={hospital.phoneHref} className="hover:text-teal-950">
-                        {hospital.phone}
-                      </a>
-                    </li>
+                    {hospital.phones.map((entry) => (
+                      <li key={entry.phoneHref} className="flex gap-3">
+                        <Phone className="mt-0.5 h-4 w-4 text-gold" />
+                        <a href={entry.phoneHref} className="hover:text-teal-950">
+                          {entry.phone}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </article>
               </Reveal>

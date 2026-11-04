@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { services } from "@/data/services";
+import { servicePath, services } from "@/data/services";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/motion/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -9,8 +9,10 @@ import ServiceIcon from "@/components/ui/ServiceIcon";
 import Button from "@/components/ui/Button";
 
 export default function ServicesPreview() {
-  const featured = services.find((service) => service.featured) ?? services[0];
-  const others = services.filter((service) => service.id !== featured.id);
+  const featured =
+    services.find((service) => service.slug === "laparoscopic-surgery") ??
+    services[0];
+  const others = services.filter((service) => service.slug !== featured.slug);
 
   return (
     <section className="section-padding bg-cream-dark/40">
@@ -31,12 +33,12 @@ export default function ServicesPreview() {
         <div className="grid gap-6 lg:grid-cols-2">
           <Reveal>
             <Link
-              href={`/services/${featured.slug}`}
+              href={servicePath(featured.slug)}
               className="group relative block h-full min-h-[360px] overflow-hidden rounded-card shadow-soft"
             >
               <Image
-                src={featured.image.src}
-                alt={featured.image.alt}
+                src={featured.image}
+                alt={`${featured.title} illustration`}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -44,13 +46,16 @@ export default function ServicesPreview() {
               <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-teal-950/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
                 <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold/20 text-gold-light">
-                  <ServiceIcon name={featured.icon} className="h-5 w-5 text-gold-light" />
+                  <ServiceIcon
+                    name={featured.icon}
+                    className="h-5 w-5 text-gold-light"
+                  />
                 </span>
                 <h3 className="font-serif text-3xl text-cream">
                   {featured.title}
                 </h3>
                 <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/75">
-                  {featured.summary}
+                  {featured.tagline}
                 </p>
               </div>
             </Link>
@@ -58,9 +63,9 @@ export default function ServicesPreview() {
 
           <div className="grid gap-4">
             {others.map((service, index) => (
-              <Reveal key={service.id} delay={0.05 * index}>
+              <Reveal key={service.slug} delay={0.05 * index}>
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={servicePath(service.slug)}
                   className="group flex items-center gap-4 rounded-card border border-teal-950/5 bg-white/70 p-5 shadow-soft backdrop-blur-sm transition hover:border-gold/40 hover:bg-white"
                 >
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gold/10">
@@ -71,7 +76,7 @@ export default function ServicesPreview() {
                       {service.shortTitle}
                     </span>
                     <span className="mt-1 line-clamp-2 text-sm text-muted">
-                      {service.summary}
+                      {service.tagline}
                     </span>
                   </span>
                   <ArrowUpRight className="h-5 w-5 shrink-0 text-gold transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

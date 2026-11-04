@@ -39,7 +39,8 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-cream font-sans text-teal-950 antialiased;
+    /* clip avoids horizontal spill without breaking position:sticky (unlike hidden) */
+    @apply overflow-x-clip bg-cream font-sans text-teal-950 antialiased;
   }
 
   h1,
@@ -100,7 +101,7 @@
       radial-gradient(circle at 18% 30%, rgb(var(--gold) / 0.18), transparent 42%),
       radial-gradient(circle at 82% 20%, rgb(var(--teal-800) / 0.85), transparent 46%),
       radial-gradient(circle at 55% 85%, rgb(var(--gold-light) / 0.12), transparent 40%);
-    animation: dark-gradient-drift 18s ease-in-out infinite alternate;
+    /* Static wash — animated drift caused scroll jank on long pages */
     pointer-events: none;
   }
 

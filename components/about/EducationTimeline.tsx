@@ -11,7 +11,7 @@ export default function EducationTimeline() {
           <SectionHeading
             eyebrow="Training"
             title="Education & Qualifications"
-            description="A progressive path from medical school through fellowship and consultant practice."
+            description="A progressive path from medical school through fellowship and advanced laparoscopic training."
             align="center"
             className="mb-12"
           />

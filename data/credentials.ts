@@ -27,8 +27,32 @@ export const trustCredentials: Credential[] = [
   },
 ];
 
-export const aboutQualifications = [
+export const aboutSpecialties = [
   "Laparoscopic Surgery",
   "General Surgery",
-  "Advanced Endoscopy",
 ] as const;
+
+export type AboutAppointment = {
+  role: string;
+  place: string;
+  note?: string;
+};
+
+export const aboutAppointments: AboutAppointment[] = [
+  {
+    role: "Consultant Surgeon",
+    place: "Aziz Bhatti Shaheed Hospital",
+    note: "Since 2012",
+  },
+  {
+    role: "Ex-Senior Registrar, Surgery",
+    place: "Mayo Hospital",
+  },
+  {
+    role: "Ex-Registrar, Surgery",
+    place: "Services Hospital",
+  },
+];
+
+/** Short specialty pills only — hospital roles use `aboutAppointments`. */
+export const aboutQualifications = aboutSpecialties;

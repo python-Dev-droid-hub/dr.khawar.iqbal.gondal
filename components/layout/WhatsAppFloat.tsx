@@ -1,7 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { isServiceSlug } from "@/data/services";
 import { doctor } from "@/data/doctor";
-import { whatsappLink } from "@/lib/utils";
+import { cn, whatsappLink } from "@/lib/utils";
 
 function WhatsAppGlyph({ className }: { className?: string }) {
   return (
@@ -12,6 +14,10 @@ function WhatsAppGlyph({ className }: { className?: string }) {
 }
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+  const slug = pathname?.startsWith("/") ? pathname.slice(1) : "";
+  const isServiceDetail = Boolean(slug && !slug.includes("/") && isServiceSlug(slug));
+
   const href = whatsappLink(
     doctor.whatsapp,
     `Assalamu Alaikum, I would like to book a consultation with ${doctor.name}.`,
@@ -23,7 +29,10 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="whatsapp-float fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+      className={cn(
+        "whatsapp-float fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+        isServiceDetail && "max-lg:hidden",
+      )}
     >
       <WhatsAppGlyph className="h-7 w-7" />
     </a>

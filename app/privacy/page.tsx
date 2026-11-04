@@ -3,18 +3,34 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/shared/PageHero";
 
 import { pageBanners } from "@/data/pageBanners";
+import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Privacy Policy";
+const pageDescription =
+  "How appointment enquiries and contact details are handled for Dr. Khawar Iqbal Gondal’s surgical practice.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Privacy Policy",
-  description:
-    "How appointment enquiries and contact details are handled for Dr. Khawar Iqbal Gondal’s surgical practice.",
+  title: pageTitle,
+  description: pageDescription,
   path: "/privacy",
 });
 
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/privacy",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Privacy", path: "/privacy" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"

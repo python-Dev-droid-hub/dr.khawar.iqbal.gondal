@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import Container from "@/components/ui/Container";
+import JsonLd from "@/components/seo/JsonLd";
 import PageHero from "@/components/shared/PageHero";
 import Reveal from "@/components/motion/Reveal";
 import { formatDate } from "@/lib/utils";
-
 import { pageBanners } from "@/data/pageBanners";
+import { blogIndexJsonLd } from "@/lib/blog-json-ld";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
@@ -21,6 +22,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={blogIndexJsonLd()} />
       <PageHero
         eyebrow="Blog"
         title="Health insights"
@@ -41,6 +43,7 @@ export default function BlogPage() {
                   <Image
                     src={post.image.src}
                     alt={post.image.alt}
+                    title={post.image.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -65,6 +68,19 @@ export default function BlogPage() {
               </article>
             </Reveal>
           ))}
+        </Container>
+        <Container className="mt-10">
+          <p className="text-center text-sm text-muted">
+            Looking for a procedure? Explore{" "}
+            <Link href="/services" className="font-semibold text-gold-dark hover:text-teal-950">
+              surgical services
+            </Link>{" "}
+            or{" "}
+            <Link href="/book" className="font-semibold text-gold-dark hover:text-teal-950">
+              book a consultation
+            </Link>{" "}
+            in Gujrat or Mandi Bahauddin.
+          </p>
         </Container>
       </section>
     </>

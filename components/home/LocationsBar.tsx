@@ -37,15 +37,17 @@ export default function LocationsBar() {
                     <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                     <span>{hospital.schedule}</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                    <a
-                      href={hospital.phoneHref}
-                      className="font-medium text-teal-950 hover:text-gold-dark"
-                    >
-                      {hospital.phone}
-                    </a>
-                  </li>
+                  {hospital.phones.map((entry) => (
+                    <li key={entry.phoneHref} className="flex items-start gap-3">
+                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                      <a
+                        href={entry.phoneHref}
+                        className="font-medium text-teal-950 hover:text-gold-dark"
+                      >
+                        {entry.phone}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
 
                 <Button

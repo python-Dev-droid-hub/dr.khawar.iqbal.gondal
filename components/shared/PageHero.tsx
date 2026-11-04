@@ -36,7 +36,8 @@ export default function PageHero({
       <div aria-hidden className="absolute inset-0">
         <Image
           src={image.src}
-          alt=""
+          alt={image.alt}
+          title={image.title || image.alt}
           fill
           priority
           quality={65}

@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/motion/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { aboutQualifications } from "@/data/credentials";
+import { aboutAppointments, aboutSpecialties } from "@/data/credentials";
 import { doctor } from "@/data/doctor";
 
 export default function AboutProfile() {
@@ -24,6 +24,7 @@ export default function AboutProfile() {
                   <Image
                     src={doctor.aboutPortrait.src}
                     alt={doctor.aboutPortrait.alt}
+                    title={doctor.aboutPortrait.alt}
                     fill
                     priority
                     className="object-contain object-bottom"
@@ -49,15 +50,30 @@ export default function AboutProfile() {
             {doctor.aboutExtended[1]}
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {aboutQualifications.map((item) => (
-              <Badge key={item} variant="cream">
+          <div className="mt-5 flex flex-wrap gap-1.5">
+            {aboutSpecialties.map((item) => (
+              <Badge key={item} variant="cream" className="px-3 py-1 text-[11px]">
                 {item}
               </Badge>
             ))}
           </div>
 
-          <p className="mt-8 font-hand text-3xl text-teal-800 md:text-4xl">
+          <ul className="mt-3 space-y-1">
+            {aboutAppointments.map((item) => (
+              <li
+                key={`${item.role}-${item.place}`}
+                className="text-sm leading-snug text-heading md:text-[15px]"
+              >
+                <span className="font-semibold">{item.role}</span>
+                <span className="text-muted"> — {item.place}</span>
+                {item.note ? (
+                  <span className="text-gold-dark"> · {item.note}</span>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-6 font-hand text-2xl text-teal-800 md:text-3xl">
             {doctor.signature}
           </p>
 

@@ -8,7 +8,7 @@ import Badge from "@/components/ui/Badge";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/motion/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { aboutQualifications } from "@/data/credentials";
+import { aboutAppointments, aboutSpecialties } from "@/data/credentials";
 import { doctor } from "@/data/doctor";
 
 function ExperienceCounter({ value }: { value: number }) {
@@ -46,6 +46,70 @@ function ExperienceCounter({ value }: { value: number }) {
   );
 }
 
+function CredentialsBlock() {
+  return (
+    <>
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {aboutSpecialties.map((item) => (
+          <Badge key={item} variant="cream" className="px-3 py-1 text-[11px]">
+            {item}
+          </Badge>
+        ))}
+      </div>
+
+      <ul className="mt-3 space-y-1">
+        {aboutAppointments.map((item) => (
+          <li
+            key={`${item.role}-${item.place}`}
+            className="text-sm leading-snug text-heading"
+          >
+            <span className="font-semibold">{item.role}</span>
+            <span className="text-muted"> — {item.place}</span>
+            {item.note ? (
+              <span className="text-gold-dark"> · {item.note}</span>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+function StatsAndCta({ large = false }: { large?: boolean }) {
+  return (
+    <>
+      <div className="mt-5 flex flex-wrap items-end gap-x-6 gap-y-2">
+        <div>
+          <p
+            className={
+              large
+                ? "font-serif text-4xl text-heading md:text-5xl"
+                : "font-serif text-3xl text-heading sm:text-4xl"
+            }
+          >
+            <ExperienceCounter value={doctor.experienceYears} />
+          </p>
+          <p className="mt-0.5 text-xs text-muted sm:text-sm">
+            Years of experience
+          </p>
+        </div>
+        <p
+          className={
+            large
+              ? "pb-1 font-hand text-2xl leading-none text-teal-800 md:text-3xl"
+              : "pb-0.5 font-hand text-xl leading-none text-teal-800 sm:text-2xl"
+          }
+        >
+          {doctor.signature}
+        </p>
+      </div>
+      <Button href="/about" variant="outline" className="mt-5">
+        Read Full Profile
+      </Button>
+    </>
+  );
+}
+
 export default function AboutPreview() {
   return (
     <section id="about-preview" className="section-padding pt-10 md:pt-12">
@@ -64,6 +128,7 @@ export default function AboutPreview() {
                     <Image
                       src={doctor.aboutPortrait.src}
                       alt={doctor.aboutPortrait.alt}
+                      title={doctor.aboutPortrait.alt}
                       fill
                       className="object-contain object-bottom"
                       sizes="180px"
@@ -89,27 +154,8 @@ export default function AboutPreview() {
           <p className="text-sm leading-relaxed text-muted sm:text-base">
             {doctor.aboutExtended[1]}
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {aboutQualifications.map((item) => (
-              <Badge key={item} variant="cream">
-                {item}
-              </Badge>
-            ))}
-          </div>
-          <div className="mt-6 flex flex-wrap items-end gap-4 sm:gap-8">
-            <div>
-              <p className="font-serif text-4xl text-heading sm:text-5xl">
-                <ExperienceCounter value={doctor.experienceYears} />
-              </p>
-              <p className="mt-1 text-sm text-muted">Years of experience</p>
-            </div>
-            <p className="font-hand text-2xl text-teal-800 sm:text-3xl md:text-4xl">
-              {doctor.signature}
-            </p>
-          </div>
-          <Button href="/about" variant="outline" className="mt-6 sm:mt-8">
-            Read Full Profile
-          </Button>
+          <CredentialsBlock />
+          <StatsAndCta />
         </div>
 
         <div className="hidden items-center gap-16 lg:grid lg:grid-cols-2">
@@ -125,6 +171,7 @@ export default function AboutPreview() {
                     <Image
                       src={doctor.aboutPortrait.src}
                       alt={doctor.aboutPortrait.alt}
+                      title={doctor.aboutPortrait.alt}
                       fill
                       className="object-contain object-bottom"
                       sizes="420px"
@@ -145,27 +192,8 @@ export default function AboutPreview() {
             <p className="mt-4 text-base leading-relaxed text-muted">
               {doctor.aboutExtended[1]}
             </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {aboutQualifications.map((item) => (
-                <Badge key={item} variant="cream">
-                  {item}
-                </Badge>
-              ))}
-            </div>
-            <div className="mt-8 flex flex-wrap items-end gap-8">
-              <div>
-                <p className="font-serif text-5xl text-heading">
-                  <ExperienceCounter value={doctor.experienceYears} />
-                </p>
-                <p className="mt-1 text-sm text-muted">Years of experience</p>
-              </div>
-              <p className="font-hand text-4xl text-teal-800">
-                {doctor.signature}
-              </p>
-            </div>
-            <Button href="/about" variant="outline" className="mt-8">
-              Read Full Profile
-            </Button>
+            <CredentialsBlock />
+            <StatsAndCta large />
           </Reveal>
         </div>
       </Container>

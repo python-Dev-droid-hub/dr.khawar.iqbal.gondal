@@ -7,9 +7,13 @@ export type BlogPost = {
   category: string;
   date: string;
   readTime: string;
+  /** Root service slug for internal linking + schema about */
+  relatedServiceSlug?: string;
   image: {
     src: string;
     alt: string;
+    /** HTML title attribute / schema image name */
+    title: string;
   };
 };
 
@@ -28,9 +32,11 @@ export const posts: BlogPost[] = [
     category: "Recovery",
     date: "2026-09-12",
     readTime: "5 min read",
+    relatedServiceSlug: "gallbladder-surgery",
     image: {
       src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
-      alt: "Patient recovering after surgery with healthy meal planning",
+      alt: "Patient recovering after gallbladder surgery with healthy meal planning",
+      title: "Life after gallbladder removal — recovery meal planning",
     },
   },
   {
@@ -47,9 +53,11 @@ export const posts: BlogPost[] = [
     category: "Awareness",
     date: "2026-08-03",
     readTime: "4 min read",
+    relatedServiceSlug: "abdominal-gi-surgery",
     image: {
       src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-      alt: "Doctor reviewing hernia symptoms with a patient",
+      alt: "Doctor reviewing hernia symptoms with a patient in clinic",
+      title: "When to worry about a hernia — surgical consultation",
     },
   },
   {
@@ -66,13 +74,19 @@ export const posts: BlogPost[] = [
     category: "Education",
     date: "2026-06-21",
     readTime: "6 min read",
+    relatedServiceSlug: "laparoscopic-surgery",
     image: {
       src: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=1200&q=80",
-      alt: "Surgical team performing minimally invasive procedure",
+      alt: "Surgical team performing minimally invasive laparoscopic procedure",
+      title: "Benefits of minimally invasive laparoscopic surgery",
     },
   },
 ];
 
 export function getPostBySlug(slug: string) {
   return posts.find((post) => post.slug === slug);
+}
+
+export function getRelatedPosts(slug: string, limit = 2) {
+  return posts.filter((post) => post.slug !== slug).slice(0, limit);
 }

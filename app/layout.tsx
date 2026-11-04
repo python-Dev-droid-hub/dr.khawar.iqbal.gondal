@@ -8,7 +8,9 @@ import { doctor } from "@/data/doctor";
 import { siteConfig } from "@/lib/site";
 import {
   medicalClinicJsonLd,
+  organizationJsonLd,
   physicianJsonLd,
+  socialProfileJsonLd,
   websiteJsonLd,
 } from "@/lib/structured-data";
 import "./globals.css";
@@ -76,6 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: siteConfig.twitterHandle,
+    creator: siteConfig.twitterHandle,
     title: `${doctor.name} | Laparoscopic Surgeon in Gujrat`,
     description: siteConfig.description,
     images: ["/opengraph-image"],
@@ -102,11 +106,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={physicianJsonLd()} />
         <JsonLd data={medicalClinicJsonLd()} />
+        <JsonLd data={socialProfileJsonLd()} />
         <Navbar />
-        <main id="main-content" className="min-h-screen overflow-x-hidden">
+        <main id="main-content" className="min-h-screen overflow-x-clip">
           {children}
         </main>
         <Footer />

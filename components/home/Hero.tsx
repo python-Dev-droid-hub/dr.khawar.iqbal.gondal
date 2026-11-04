@@ -78,6 +78,10 @@ export default function Hero() {
 
   return (
     <section className="dark-section relative z-0 !overflow-visible">
+      <h1 className="sr-only">
+        {doctor.tagline} — {doctor.name}, Laparoscopic &amp; General Surgeon in
+        Gujrat and Mandi Bahauddin
+      </h1>
       <svg
         className="pointer-events-none absolute inset-x-0 top-10 hidden h-[65%] w-full opacity-35 lg:block"
         viewBox="0 0 1200 700"
@@ -110,7 +114,8 @@ export default function Hero() {
           >
             <Image
               src={doctor.hero.medicalScene.src}
-              alt=""
+              alt={doctor.hero.medicalScene.alt}
+              title={doctor.hero.medicalScene.alt}
               width={1024}
               height={682}
               className="h-auto w-full scale-110 object-contain object-right drop-shadow-[0_16px_32px_rgba(0,0,0,0.35)] sm:scale-105"
@@ -139,10 +144,10 @@ export default function Hero() {
               Laparoscopic &amp; General Surgery
             </p>
 
-            <h1 className="font-serif text-[1.7rem] leading-[1.08] text-cream min-[380px]:text-[1.9rem] min-[420px]:text-[2.1rem] sm:text-[2.45rem] md:text-[2.7rem]">
+            <p className="font-serif text-[1.7rem] leading-[1.08] text-cream min-[380px]:text-[1.9rem] min-[420px]:text-[2.1rem] sm:text-[2.45rem] md:text-[2.7rem]">
               <span className="block">Precision Surgery.</span>
               <span className="mt-0.5 block text-cream">Faster Recovery.</span>
-            </h1>
+            </p>
 
             <p className="mt-2.5 text-[13px] leading-relaxed text-cream/75 min-[400px]:text-sm sm:mt-3.5 sm:text-base">
               Minimally invasive laparoscopic care with advanced techniques.
@@ -189,10 +194,11 @@ export default function Hero() {
             />
           </p>
 
-          <h1 className="font-serif text-[2.9rem] leading-[1.1] xl:text-[3.2rem]">
-            <span className="block text-cream">Precision Surgery.</span>
+          {/* Visual twin of mobile H1 — CSS-hidden mobile H1 stays the document outline on small screens */}
+          <p className="font-serif text-[2.9rem] leading-[1.1] text-cream xl:text-[3.2rem]">
+            <span className="block">Precision Surgery.</span>
             <span className="mt-1 block text-gold-light">Faster Recovery.</span>
-          </h1>
+          </p>
 
           <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-cream/75">
             {doctor.subtitle}
@@ -265,6 +271,7 @@ export default function Hero() {
               <Image
                 src={doctor.hero.medicalScene.src}
                 alt={doctor.hero.medicalScene.alt}
+                title={doctor.hero.medicalScene.alt}
                 width={1024}
                 height={682}
                 className="relative h-auto w-full object-contain object-bottom drop-shadow-[0_24px_48px_rgba(201,161,91,0.2)]"

@@ -18,12 +18,15 @@ import TrustStrip from "@/components/home/TrustStrip";
 import WhyLaparoscopic from "@/components/home/WhyLaparoscopic";
 import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
-import { faqPageJsonLd } from "@/lib/structured-data";
+import { faqPageJsonLd, webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Laparoscopic Surgeon in Gujrat & Mandi Bahauddin";
+const pageDescription =
+  "Book Dr. Khawar Iqbal Gondal, laparoscopic surgeon in Gujrat and Mandi Bahauddin, for gallbladder surgery, hernia repair, and minimally invasive care.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Laparoscopic Surgeon in Gujrat & Mandi Bahauddin",
-  description:
-    "Book Dr. Khawar Iqbal Gondal, laparoscopic surgeon in Gujrat and Mandi Bahauddin, for gallbladder surgery, hernia repair, and minimally invasive care.",
+  title: pageTitle,
+  description: pageDescription,
   path: "/",
   keywords: [
     "laparoscopic surgeon Gujrat",
@@ -35,6 +38,13 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/",
+          title: pageTitle,
+          description: pageDescription,
+        })}
+      />
       <JsonLd data={faqPageJsonLd()} />
       <Hero />
       <ConsultationCard />

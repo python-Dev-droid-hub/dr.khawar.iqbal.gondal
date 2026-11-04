@@ -3,18 +3,34 @@ import Container from "@/components/ui/Container";
 import PageHero from "@/components/shared/PageHero";
 
 import { pageBanners } from "@/data/pageBanners";
+import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Terms & Conditions";
+const pageDescription =
+  "Website terms for using Dr. Khawar Iqbal Gondal’s surgical practice site and appointment requests.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Terms & Conditions",
-  description:
-    "Website terms for using Dr. Khawar Iqbal Gondal’s surgical practice site and appointment requests.",
+  title: pageTitle,
+  description: pageDescription,
   path: "/terms",
 });
 
 export default function TermsPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/terms",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Terms", path: "/terms" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="Legal"
         title="Terms & Conditions"

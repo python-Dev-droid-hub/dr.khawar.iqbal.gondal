@@ -9,12 +9,15 @@ import Reveal from "@/components/motion/Reveal";
 import JsonLd from "@/components/seo/JsonLd";
 import { pageBanners } from "@/data/pageBanners";
 import { createPageMetadata } from "@/lib/site";
-import { faqPageJsonLd } from "@/lib/structured-data";
+import { faqPageJsonLd, webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "FAQ — Laparoscopic Surgery in Gujrat & Mandi Bahauddin";
+const pageDescription =
+  "FAQs on laparoscopic surgery, gallbladder recovery, hernia care, same-day discharge, and booking with Dr. Khawar Iqbal Gondal.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "FAQ — Laparoscopic Surgery in Gujrat & Mandi Bahauddin",
-  description:
-    "FAQs on laparoscopic surgery, gallbladder recovery, hernia care, same-day discharge, and booking with Dr. Khawar Iqbal Gondal.",
+  title: pageTitle,
+  description: pageDescription,
   path: "/faq",
   keywords: ["laparoscopic surgery FAQ", "gallbladder recovery questions"],
 });
@@ -23,6 +26,17 @@ export default function FAQPage() {
   return (
     <>
       <JsonLd data={faqPageJsonLd()} />
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/faq",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "FAQ", path: "/faq" },
+          ],
+        })}
+      />
       <PageHero
         eyebrow="FAQ"
         title="Frequently asked questions"

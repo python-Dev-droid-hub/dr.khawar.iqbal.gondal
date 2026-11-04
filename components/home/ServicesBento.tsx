@@ -6,8 +6,8 @@ import { services } from "@/data/services";
 
 export default function ServicesBento() {
   const ordered = [
-    ...(services.filter((s) => s.featured)),
-    ...services.filter((s) => !s.featured),
+    ...services.filter((s) => s.slug === "laparoscopic-surgery"),
+    ...services.filter((s) => s.slug !== "laparoscopic-surgery"),
   ].slice(0, 6);
 
   return (
@@ -25,7 +25,7 @@ export default function ServicesBento() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
           {ordered.map((service, index) => (
-            <Reveal key={service.id} delay={0.04 * index} className="h-full">
+            <Reveal key={service.slug} delay={0.04 * index} className="h-full">
               <ServiceCard service={service} />
             </Reveal>
           ))}

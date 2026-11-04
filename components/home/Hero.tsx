@@ -180,7 +180,7 @@ export default function Hero() {
         onMouseLeave={onMouseLeave}
         className="relative mx-auto hidden w-full max-w-[1440px] grid-cols-[34%_42%_24%] items-end gap-0 px-12 pb-0 pt-28 lg:grid lg:min-h-[640px]"
       >
-        <div className="relative z-20 max-w-[560px] self-center pb-20">
+        <div className="relative z-30 max-w-[560px] self-center pb-20">
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-cream/90">
             Laparoscopic &amp; General Surgery
             <span
@@ -243,7 +243,8 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="relative z-30 mb-0 w-full self-end lg:-mb-6 lg:-translate-x-24 lg:-translate-y-20 xl:-translate-x-28 xl:-translate-y-24">
+        {/* Medical scene behind copy + CTAs */}
+        <div className="relative z-10 mb-0 w-full self-end lg:-mb-6 lg:-translate-x-10 lg:-translate-y-16 xl:-translate-x-14 xl:-translate-y-20">
           <motion.div
             className="relative w-[112%] origin-center scale-110"
             style={{ x: sceneLayer.tx, y: sceneLayer.ty }}
@@ -274,7 +275,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative z-30 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-8 lg:translate-x-3 lg:-translate-y-2 xl:translate-x-5 xl:-translate-y-3">
+        <div className="relative z-20 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-8 lg:translate-x-3 lg:-translate-y-2 xl:translate-x-5 xl:-translate-y-3">
           <div
             className="pointer-events-none absolute bottom-0 right-[5%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
             aria-hidden

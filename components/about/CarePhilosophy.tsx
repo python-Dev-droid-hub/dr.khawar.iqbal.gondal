@@ -76,7 +76,7 @@ export default function CarePhilosophy() {
                 <article
                   className={cn(
                     "group relative flex h-full flex-col overflow-hidden rounded-card border border-teal-950/5 bg-white/90 p-6 shadow-soft transition duration-300 md:p-7",
-                    "hover:-translate-y-1 hover:border-gold/30 hover:shadow-[0_16px_36px_rgba(11,46,51,0.08)]",
+                    "hover:-translate-y-1 hover:border-gold/30 hover:shadow-[0_16px_36px_rgba(1,24,57,0.08)]",
                   )}
                 >
                   <div

@@ -176,7 +176,7 @@ export default function Navbar() {
                           transition={{ duration: 0.16 }}
                           className="absolute left-0 top-full z-[70] w-64 pt-2"
                         >
-                          <div className="overflow-hidden rounded-xl border border-teal-950/10 bg-cream py-2 shadow-[0_12px_32px_rgba(11,46,51,0.14)]">
+                          <div className="overflow-hidden rounded-xl border border-teal-950/10 bg-cream py-2 shadow-[0_12px_32px_rgba(1,24,57,0.14)]">
                             <Link
                               href="/services"
                               role="menuitem"

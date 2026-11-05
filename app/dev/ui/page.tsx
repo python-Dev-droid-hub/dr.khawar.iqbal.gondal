@@ -69,9 +69,9 @@ export default function DesignSystemPage() {
 
         <Block title="Color tokens">
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            <Swatch name="teal-950" className="bg-teal-950" hex="#0B2E33" />
-            <Swatch name="teal-900" className="bg-teal-900" hex="#0F3D43" />
-            <Swatch name="teal-800" className="bg-teal-800" hex="#14505A" />
+            <Swatch name="teal-950" className="bg-teal-950" hex="#011839" />
+            <Swatch name="teal-900" className="bg-teal-900" hex="#0A2A4E" />
+            <Swatch name="teal-800" className="bg-teal-800" hex="#143A5C" />
             <Swatch name="cream" className="bg-cream" hex="#F7F5F0" />
             <Swatch name="cream-dark" className="bg-cream-dark" hex="#EFE9DC" />
             <Swatch name="gold" className="bg-gold" hex="#C9A15B" />

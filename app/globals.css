@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --teal-950: 11 46 51;
-  --teal-900: 15 61 67;
-  --teal-800: 20 80 90;
+  /* Primary navy #011839 — replaces old teal greens e.g. #174043 */
+  --teal-950: 1 24 57;
+  --teal-900: 10 42 78;
+  --teal-800: 20 58 92;
   --cream: 247 245 240;
   --cream-dark: 239 233 220;
   --gold: 201 161 91;
   --gold-light: 230 201 138;
   --gold-dark: 169 128 59;
-  /* Heading navy — #011839 */
   --heading: 1 24 57;
   --text-dark: 1 24 57;
   --text-muted: 91 107 110;
@@ -80,7 +80,7 @@
   .interactive-card:hover {
     transform: translateY(-6px);
     box-shadow:
-      0 10px 28px rgba(11, 46, 51, 0.08),
+      0 10px 28px rgba(1, 24, 57, 0.08),
       0 18px 40px rgba(201, 161, 91, 0.16);
   }
 

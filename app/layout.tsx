@@ -34,7 +34,7 @@ const caveat = Caveat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0B2E33",
+  themeColor: "#011839",
   width: "device-width",
   initialScale: 1,
 };

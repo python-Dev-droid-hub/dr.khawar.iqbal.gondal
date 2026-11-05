@@ -127,7 +127,7 @@ export default function Hero() {
           {/* Doctor — on top of medical scene; lower half under consultation cards */}
           <div className="pointer-events-none absolute bottom-8 left-[52%] right-[-14%] z-20 flex h-[95%] max-h-[540px] items-end justify-end sm:bottom-10 sm:left-[54%] sm:right-[-10%] sm:max-h-[620px] md:max-h-[660px]">
             <div
-              className="absolute bottom-[12%] right-[8%] h-[45%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
+              className="absolute bottom-[12%] right-[8%] h-[45%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(1_24_57/0.5)_0%,transparent_70%)] blur-2xl"
               aria-hidden
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -265,7 +265,7 @@ export default function Hero() {
               className="relative"
             >
               <div
-                className="pointer-events-none absolute inset-[-8%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_100_110/0.28)_0%,transparent_68%)] blur-xl"
+                className="pointer-events-none absolute inset-[-8%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(1_24_57/0.28)_0%,transparent_68%)] blur-xl"
                 aria-hidden
               />
               <Image
@@ -284,7 +284,7 @@ export default function Hero() {
 
         <div className="relative z-20 flex h-[min(680px,92vh)] w-full items-end justify-end self-end lg:-mb-8 lg:translate-x-3 lg:-translate-y-2 xl:translate-x-5 xl:-translate-y-3">
           <div
-            className="pointer-events-none absolute bottom-0 right-[5%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(20_80_90/0.5)_0%,transparent_70%)] blur-2xl"
+            className="pointer-events-none absolute bottom-0 right-[5%] h-[55%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgb(1_24_57/0.5)_0%,transparent_70%)] blur-2xl"
             aria-hidden
           />
           <motion.div

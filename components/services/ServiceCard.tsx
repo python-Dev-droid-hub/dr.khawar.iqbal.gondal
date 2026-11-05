@@ -47,7 +47,7 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
           className={cn(
             "absolute inset-y-0 left-0 w-[72%] sm:w-[55%] md:w-[48%]",
             isFeatured
-              ? "bg-gradient-to-r from-[rgb(11_46_51)] via-[rgb(11_46_51/0.85)] to-transparent"
+              ? "bg-gradient-to-r from-[rgb(1_24_57)] via-[rgb(1_24_57/0.85)] to-transparent"
               : "bg-gradient-to-r from-cream-dark/95 via-cream-dark/80 to-transparent",
           )}
         />

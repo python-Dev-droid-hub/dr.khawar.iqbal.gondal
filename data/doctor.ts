@@ -1,11 +1,15 @@
+/** Career start year used to calculate years of experience site-wide. */
+export const CAREER_START_YEAR = 2002;
+
 export const doctor = {
   name: "Dr. Khawar Iqbal Gondal",
   shortName: "Dr. Khawar",
   title: "Laparoscopic & General Surgeon",
   credentials: "MBBS, FCPS (Surgery)",
-  experienceYears: 15,
+  careerStartYear: CAREER_START_YEAR,
+  experienceYears: new Date().getFullYear() - CAREER_START_YEAR,
   surgeriesCompleted: 1000,
-  patientSatisfaction: 98,
+  patientSatisfaction: 100,
   rating: 5.0,
   location: "Gujrat & Mandi Bahauddin, Pakistan",
   whatsapp: "+923266493614",
@@ -16,7 +20,7 @@ export const doctor = {
     "Minimally invasive laparoscopic care with advanced techniques and compassionate care.",
   bio: "Dr. Khawar Iqbal Gondal is a laparoscopic and general surgeon serving patients across Gujrat and Mandi Bahauddin. He specializes in minimally invasive techniques that reduce hospital stay, minimize scarring, and support faster recovery — with clear communication at every step of care.",
   aboutExtended: [
-    "With over 15 years of surgical experience and more than 1,000 successful procedures, Dr. Khawar combines precise technique with a calm, patient-first approach. He previously served as Registrar in Surgery at Services Hospital and Senior Registrar in Surgery at Mayo Hospital, and has worked as Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.",
+    `With over ${new Date().getFullYear() - CAREER_START_YEAR} years of surgical experience since ${CAREER_START_YEAR} and more than 1,000 successful procedures, Dr. Khawar combines precise technique with a calm, patient-first approach. He previously served as Registrar in Surgery at Services Hospital and Senior Registrar in Surgery at Mayo Hospital, and has worked as Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.`,
     "Patients are seen at Shifa Hospital (Gujrat) and Tarar Hospital (Mandi Bahauddin), with flexible weekday and weekend consultation hours. Whether you need a second opinion or are preparing for surgery, you can expect thorough evaluation, honest guidance, and attentive follow-up.",
   ],
   specialties: [

@@ -1,3 +1,5 @@
+import { doctor } from "@/data/doctor";
+
 export type Stat = {
   id: string;
   value: string;
@@ -14,7 +16,7 @@ export const heroTrustItems: Stat[] = [
   },
   {
     id: "ht2",
-    value: "Years of Experience",
+    value: `${doctor.experienceYears}+ Years Experience`,
     label: "",
     icon: "experience",
   },
@@ -35,13 +37,13 @@ export const bannerStats: Stat[] = [
   },
   {
     id: "bs2",
-    value: "15+",
+    value: `${doctor.experienceYears}+`,
     label: "Years of Experience",
     icon: "experience",
   },
   {
     id: "bs3",
-    value: "98%",
+    value: `${doctor.patientSatisfaction}%`,
     label: "Patient Satisfaction",
     icon: "satisfaction",
   },

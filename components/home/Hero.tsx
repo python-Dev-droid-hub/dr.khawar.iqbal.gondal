@@ -20,8 +20,18 @@ import { useCanParallax } from "@/hooks/useCanParallax";
 import { whatsappLink } from "@/lib/utils";
 
 const trustItems = [
-  { id: "ht1", line1: "1000+", line2: "Surgeries", icon: "surgeries" },
-  { id: "ht2", line1: "Years of", line2: "Experience", icon: "experience" },
+  {
+    id: "ht1",
+    line1: `${doctor.surgeriesCompleted}+`,
+    line2: "Surgeries",
+    icon: "surgeries",
+  },
+  {
+    id: "ht2",
+    line1: `${doctor.experienceYears}+`,
+    line2: "Years Exp.",
+    icon: "experience",
+  },
   { id: "ht3", line1: "Same-Day", line2: "Discharge", icon: "discharge" },
 ] as const;
 

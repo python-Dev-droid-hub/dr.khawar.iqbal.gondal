@@ -12,6 +12,7 @@ export type Testimonial = {
   };
 };
 
+/** Portrait photos of South Asian / Pakistani people (Unsplash). */
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
@@ -22,8 +23,8 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     serviceSlugs: ["laparoscopic-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Ahmed Khan",
+      src: "https://images.unsplash.com/photo-1615109398623-88346a601842?auto=format&fit=crop&w=200&q=80",
+      alt: "Portrait of Ahmed Khan, patient from Gujrat",
     },
   },
   {
@@ -35,8 +36,8 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     serviceSlugs: ["laparoscopic-surgery", "abdominal-gi-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Sana Malik",
+      src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=200&q=80",
+      alt: "Portrait of Sana Malik, patient from Mandi Bahauddin",
     },
   },
   {
@@ -48,8 +49,8 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     serviceSlugs: ["laparoscopic-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Imran Raza",
+      src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=200&q=80",
+      alt: "Portrait of Imran Raza, patient from Gujrat",
     },
   },
   {
@@ -60,8 +61,8 @@ export const testimonials: Testimonial[] = [
       "Kind bedside manner and excellent surgical skill. Appointments were easy to arrange at Tarar Hospital on the weekend.",
     rating: 5,
     avatar: {
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Fatima Noor",
+      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      alt: "Portrait of Fatima Noor, patient from Mandi Bahauddin",
     },
   },
   {
@@ -72,8 +73,8 @@ export const testimonials: Testimonial[] = [
       "I was anxious about surgery, but Dr. Khawar answered every question clearly. Same-day discharge after my procedure was a relief.",
     rating: 5,
     avatar: {
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Bilal Hussain",
+      src: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80",
+      alt: "Portrait of Bilal Hussain, patient from Gujrat",
     },
   },
 ];

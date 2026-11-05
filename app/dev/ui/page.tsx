@@ -178,7 +178,7 @@ export default function DesignSystemPage() {
         <Block title="Badge / Pill">
           <div className="flex flex-wrap gap-3">
             <Badge variant="gold">Laparoscopic</Badge>
-            <Badge variant="teal">15+ Years</Badge>
+            <Badge variant="teal">24+ Years</Badge>
             <Badge variant="cream">Same-Day Discharge</Badge>
             <Badge variant="outline">FCPS Surgery</Badge>
           </div>

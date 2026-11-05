@@ -1,3 +1,5 @@
+import { doctor } from "@/data/doctor";
+
 export type TimelineItem = {
   id: string;
   year: string;
@@ -50,6 +52,14 @@ export const educationTimeline: TimelineItem[] = [
 ];
 
 export const experienceTimeline: TimelineItem[] = [
+  {
+    id: "exp-0",
+    year: "Since 2002",
+    title: "Surgical career begins",
+    place: "Pakistan",
+    description:
+      "Clinical and surgical practice starting in 2002 — the foundation of more than two decades of operative experience.",
+  },
   {
     id: "exp-1",
     year: "Registrar",
@@ -135,7 +145,17 @@ export const carePhilosophy = {
 
 export const aboutAchievements: AchievementStat[] = [
   { id: "a1", value: 1000, suffix: "+", label: "Successful surgeries" },
-  { id: "a2", value: 15, suffix: "+", label: "Years of experience" },
-  { id: "a3", value: 98, suffix: "%", label: "Patient satisfaction" },
+  {
+    id: "a2",
+    value: doctor.experienceYears,
+    suffix: "+",
+    label: "Years of experience",
+  },
+  {
+    id: "a3",
+    value: doctor.patientSatisfaction,
+    suffix: "%",
+    label: "Patient satisfaction",
+  },
   { id: "a4", value: 5, decimals: 1, label: "Patient rating" },
 ];

@@ -2,32 +2,33 @@ import { Award, HeartPulse, Star, Trophy } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/motion/Reveal";
+import { doctor } from "@/data/doctor";
 
 const stats = [
   {
     id: "surgeries",
-    value: 1000,
+    value: doctor.surgeriesCompleted,
     suffix: "+",
     label: "Surgeries",
     icon: Trophy,
   },
   {
     id: "years",
-    value: 15,
+    value: doctor.experienceYears,
     suffix: "+",
     label: "Years",
     icon: Award,
   },
   {
     id: "satisfaction",
-    value: 98,
+    value: doctor.patientSatisfaction,
     suffix: "%",
     label: "Satisfaction",
     icon: HeartPulse,
   },
   {
     id: "rating",
-    value: 5.0,
+    value: doctor.rating,
     suffix: "",
     decimals: 1,
     label: "Rating",

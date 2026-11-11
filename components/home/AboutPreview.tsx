@@ -119,21 +119,19 @@ export default function AboutPreview() {
           <Reveal>
             <div className="relative mx-auto w-full max-w-[160px] min-[400px]:max-w-[180px] sm:max-w-[220px]">
               <div
-                className="absolute -inset-x-2 -bottom-3 top-8 rounded-[1.5rem] bg-gold-gradient opacity-90 shadow-gold sm:-inset-x-3 sm:top-10"
+                className="absolute inset-x-0 -bottom-3 top-6 rounded-t-[999px] rounded-b-[1.25rem] bg-gold-gradient opacity-90 shadow-gold sm:top-8"
                 aria-hidden
               />
               <div className="relative overflow-hidden rounded-t-[999px] rounded-b-[1.25rem] border-[4px] border-cream bg-cream shadow-soft sm:border-[5px]">
-                <div className="relative aspect-[3/4]">
-                  <div className="absolute inset-x-2 bottom-0 top-8 sm:inset-x-3 sm:top-10">
-                    <Image
-                      src={doctor.aboutPortrait.src}
-                      alt={doctor.aboutPortrait.alt}
-                      title={doctor.aboutPortrait.alt}
-                      fill
-                      className="object-contain object-bottom"
-                      sizes="180px"
-                    />
-                  </div>
+                <div className="relative aspect-[3/4] overflow-hidden bg-cream">
+                  <Image
+                    src={doctor.aboutPortrait.src}
+                    alt={doctor.aboutPortrait.alt}
+                    title={doctor.aboutPortrait.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="180px"
+                  />
                 </div>
               </div>
             </div>
@@ -162,21 +160,19 @@ export default function AboutPreview() {
           <Reveal>
             <div className="relative mx-auto w-full max-w-md lg:mx-0">
               <div
-                className="absolute -inset-x-6 -bottom-4 top-10 rounded-[2rem] bg-gold-gradient opacity-90 shadow-gold"
+                className="absolute inset-x-0 -bottom-4 top-8 rounded-t-[999px] rounded-b-[1.75rem] bg-gold-gradient opacity-90 shadow-gold"
                 aria-hidden
               />
               <div className="relative overflow-hidden rounded-t-[999px] rounded-b-[1.75rem] border-[6px] border-cream bg-cream shadow-soft">
-                <div className="relative aspect-[3/4]">
-                  <div className="absolute inset-x-4 bottom-0 top-12">
-                    <Image
-                      src={doctor.aboutPortrait.src}
-                      alt={doctor.aboutPortrait.alt}
-                      title={doctor.aboutPortrait.alt}
-                      fill
-                      className="object-contain object-bottom"
-                      sizes="420px"
-                    />
-                  </div>
+                <div className="relative aspect-[3/4] overflow-hidden bg-cream">
+                  <Image
+                    src={doctor.aboutPortrait.src}
+                    alt={doctor.aboutPortrait.alt}
+                    title={doctor.aboutPortrait.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="420px"
+                  />
                 </div>
               </div>
             </div>

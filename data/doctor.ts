@@ -32,10 +32,10 @@ export const doctor = {
   ],
   portrait: {
     src: "/images/doctor-cutout.png",
-    alt: "Dr. Khawar Iqbal Gondal, Laparoscopic and General Surgeon, in white coat and sunglasses",
+    alt: "Dr. Khawar Iqbal Gondal, Laparoscopic and General Surgeon, in white coat with arms crossed",
   },
   aboutPortrait: {
-    src: "/images/doctor-about.png",
+    src: "/images/doctor-about-frame.jpg",
     alt: "Dr. Khawar Iqbal Gondal, Laparoscopic and General Surgeon",
   },
   hero: {

@@ -15,22 +15,20 @@ export default function AboutProfile() {
         <Reveal>
           <div className="relative mx-auto w-full max-w-[min(100%,28rem)] px-1 lg:mx-0 lg:px-0">
             <div
-              className="absolute -inset-x-2 -bottom-4 top-10 rounded-[2rem] bg-gold-gradient opacity-90 shadow-gold sm:-inset-x-4 md:-inset-x-6"
+              className="absolute inset-x-0 -bottom-4 top-8 rounded-t-[999px] rounded-b-[1.75rem] bg-gold-gradient opacity-90 shadow-gold"
               aria-hidden
             />
             <div className="relative overflow-hidden rounded-t-[999px] rounded-b-[1.75rem] border-[6px] border-cream bg-cream shadow-soft">
-              <div className="relative aspect-[3/4]">
-                <div className="absolute inset-x-3 bottom-0 top-10 md:inset-x-4 md:top-12">
-                  <Image
-                    src={doctor.aboutPortrait.src}
-                    alt={doctor.aboutPortrait.alt}
-                    title={doctor.aboutPortrait.alt}
-                    fill
-                    priority
-                    className="object-contain object-bottom"
-                    sizes="(max-width: 1024px) 90vw, 420px"
-                  />
-                </div>
+              <div className="relative aspect-[3/4] overflow-hidden bg-cream">
+                <Image
+                  src={doctor.aboutPortrait.src}
+                  alt={doctor.aboutPortrait.alt}
+                  title={doctor.aboutPortrait.alt}
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 90vw, 420px"
+                />
               </div>
             </div>
           </div>

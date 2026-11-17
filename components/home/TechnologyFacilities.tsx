@@ -20,12 +20,11 @@ export default function TechnologyFacilities() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Facilities"
-            title="Modern Technology & Care"
-            description="Hospital-based surgery with equipment and protocols built around patient safety."
+            title="Modern Technology & Safe Hospital Care"
+            description="I operate in well-equipped hospital theatres utilizing advanced medical technology and strict safety standards to protect your health."
             align="center"
             light
-            className="mb-10 md:mb-12"
+            className="mb-10 max-w-3xl md:mb-12"
           />
         </Reveal>
 

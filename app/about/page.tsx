@@ -8,7 +8,6 @@ import HospitalAffiliations from "@/components/about/HospitalAffiliations";
 import ProfessionalMemberships from "@/components/about/ProfessionalMemberships";
 import FinalCTA from "@/components/home/FinalCTA";
 import PageHero from "@/components/shared/PageHero";
-import { doctor } from "@/data/doctor";
 import { pageBanners } from "@/data/pageBanners";
 import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
@@ -40,9 +39,9 @@ export default function AboutPage() {
         })}
       />
       <PageHero
-        eyebrow="About the Surgeon"
-        title={`Meet ${doctor.name}`}
-        description="Laparoscopic and general surgery with a calm, patient-first approach across Gujrat and Mandi Bahauddin."
+        eyebrow="My Surgical Background"
+        title="Meet Dr. Khawar Iqbal Gondal"
+        description="Since 2002, I have helped families across Gujrat and Mandi Bahauddin heal safely—combining careful surgical skill with honest advice and personal follow-up."
         image={pageBanners.about}
         breadcrumbs={[
           { label: "Home", href: "/" },

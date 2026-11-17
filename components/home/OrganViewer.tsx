@@ -23,6 +23,7 @@ function OrganFallback({
       <Image
         src={doctor.hero.organ.src}
         alt={doctor.hero.organ.alt}
+        title={doctor.hero.organ.alt}
         width={520}
         height={520}
         className="h-full w-full object-contain drop-shadow-[0_20px_40px_rgba(201,161,91,0.2)]"

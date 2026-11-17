@@ -12,69 +12,71 @@ export type Testimonial = {
   };
 };
 
-/** Portrait photos of South Asian / Pakistani people (Unsplash). */
+/** Patient portraits provided for Pakistani review faces. */
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "Ahmed Khan",
+    name: "Muhammad Tariq",
     location: "Gujrat",
     quote:
-      "Excellent doctor — professional, clear, and caring throughout my gallbladder surgery. Recovery was smoother than I expected.",
+      "Dr. Khawar Iqbal Gondal removed my gallstones safely at Shifa Hospital Gujrat. Very calm doctor, small cuts, and fast recovery.",
     rating: 5,
-    serviceSlugs: ["laparoscopic-surgery"],
+    serviceSlugs: ["laparoscopic-surgery", "gallbladder-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1615109398623-88346a601842?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Ahmed Khan, patient from Gujrat",
+      src: "/images/reviews/ahmed-pk.jpg",
+      alt: "Portrait of Muhammad Tariq, patient from Gujrat",
     },
   },
   {
     id: "t2",
-    name: "Sana Malik",
+    name: "Shahid Mehmood",
     location: "Mandi Bahauddin",
     quote:
-      "Dr. Khawar explained every step of my hernia repair. The laparoscopic approach meant I was back on my feet quickly.",
+      "Best surgeon in Mandi Bahauddin. Dr. Khawar explained my hernia surgery clearly at Tarar Hospital and guided my smooth recovery.",
     rating: 5,
     serviceSlugs: ["laparoscopic-surgery", "abdominal-gi-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Sana Malik, patient from Mandi Bahauddin",
+      src: "/images/reviews/imran-pk.jpg",
+      alt: "Portrait of Shahid Mehmood, patient from Mandi Bahauddin",
     },
   },
   {
     id: "t3",
-    name: "Imran Raza",
+    name: "Ayesha Bibi",
     location: "Gujrat",
     quote:
-      "From consultation to follow-up, the care felt organized and reassuring. Highly recommended for laparoscopic surgery.",
+      "When my son had sudden appendix pain, Dr. Khawar operated quickly at Shifa Hospital. Caring doctor with great follow-up.",
     rating: 5,
-    serviceSlugs: ["laparoscopic-surgery"],
+    serviceSlugs: ["laparoscopic-surgery", "abdominal-gi-surgery"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Imran Raza, patient from Gujrat",
+      src: "/images/reviews/ayesha-pk.jpg",
+      alt: "Portrait of Ayesha Bibi, patient from Gujrat",
     },
   },
   {
     id: "t4",
-    name: "Fatima Noor",
+    name: "Usman Ali",
     location: "Mandi Bahauddin",
     quote:
-      "Kind bedside manner and excellent surgical skill. Appointments were easy to arrange at Tarar Hospital on the weekend.",
+      "After months of pain, Dr. Khawar treated my piles gently at Tarar Hospital. Honest advice and complete relief without fear.",
     rating: 5,
+    serviceSlugs: ["perineal-proctology"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Fatima Noor, patient from Mandi Bahauddin",
+      src: "/images/reviews/ahmed-pk.jpg",
+      alt: "Portrait of Usman Ali, patient from Mandi Bahauddin",
     },
   },
   {
     id: "t5",
-    name: "Bilal Hussain",
+    name: "Rubina Kausar",
     location: "Gujrat",
     quote:
-      "I was anxious about surgery, but Dr. Khawar answered every question clearly. Same-day discharge after my procedure was a relief.",
+      "Visited Dr. Khawar for a thyroid second opinion in Gujrat. He listened patiently, explained everything simply, and gave honest guidance.",
     rating: 5,
+    serviceSlugs: ["head-neck-surgery", "breast-endocrine"],
     avatar: {
-      src: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80",
-      alt: "Portrait of Bilal Hussain, patient from Gujrat",
+      src: "/images/reviews/sana-pk.jpg",
+      alt: "Portrait of Rubina Kausar, patient from Gujrat",
     },
   },
 ];

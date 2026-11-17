@@ -43,6 +43,7 @@ export default function HomePage() {
           path: "/",
           title: pageTitle,
           description: pageDescription,
+          crumbs: [{ name: "Home", path: "/" }],
         })}
       />
       <JsonLd data={faqPageJsonLd()} />

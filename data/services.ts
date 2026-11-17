@@ -115,7 +115,7 @@ export const services: Service[] = [
     title: "Laparoscopic Surgery",
     shortTitle: "Laparoscopic",
     tagline:
-      "Keyhole procedures for gallbladder, appendix, hysterectomy, and diagnostic laparoscopy with faster recovery.",
+      "I perform tiny-cut keyhole operations for faster, nearly painless recovery.",
     icon: "laparoscopic",
     image: "/images/services/laparoscopic.png",
     overviewSections: serviceOverviews["laparoscopic-surgery"],
@@ -165,9 +165,9 @@ export const services: Service[] = [
     title: "Gallbladder Surgery (Laparoscopic Cholecystectomy)",
     shortTitle: "Gallbladder Surgery",
     tagline:
-      "Keyhole removal of the gallbladder for symptomatic gallstones, with clear counselling and follow-up in Gujrat and Mandi Bahauddin.",
+      "I remove painful gallstones safely using modern tiny-cut keyhole surgery.",
     icon: "laparoscopic",
-    image: "/images/services/laparoscopic.png",
+    image: "/images/services/gallbladder.png",
     quickFacts: {
       procedureTime: "Typically 45–90 minutes", // [VERIFY WITH DOCTOR]
       hospitalStay: "Usually same day or 1 night", // [VERIFY WITH DOCTOR]
@@ -668,7 +668,7 @@ export const services: Service[] = [
     title: "Perineal & Proctology",
     shortTitle: "Proctology",
     tagline:
-      "Care for piles, fissure, fistula, pilonidal sinus, and rectal prolapse — including laser options where suitable.",
+      "I treat painful piles, fissures, and fistulas gently for relief.",
     icon: "proctology",
     image: "/images/services/digestive.png",
     overviewSections: serviceOverviews["perineal-proctology"],
@@ -715,9 +715,9 @@ export const services: Service[] = [
     title: "Head & Neck Surgery",
     shortTitle: "Head & Neck",
     tagline:
-      "Thyroid, parathyroid, salivary gland, neck cysts, and lymph node biopsy with careful operative planning.",
+      "I provide safe, careful surgery for thyroid swellings and lumps.",
     icon: "headNeck",
-    image: "/images/services/general.png",
+    image: "/images/services/head-neck.png",
     overviewSections: serviceOverviews["head-neck-surgery"],
     benefits: [
       {
@@ -758,9 +758,9 @@ export const services: Service[] = [
     title: "Breast & Endocrine",
     shortTitle: "Breast & Endocrine",
     tagline:
-      "Fibroadenoma, abscess, breast cancer surgery, gynecomastia, mastectomy, conservation, and thyroid swelling.",
+      "I offer caring, thorough evaluation and surgery for breast lumps.",
     icon: "breast",
-    image: "/images/services/general.png",
+    image: "/images/services/breast-endocrine.png",
     overviewSections: serviceOverviews["breast-endocrine"],
     benefits: [
       {
@@ -801,7 +801,7 @@ export const services: Service[] = [
     title: "Abdominal & GI Surgery",
     shortTitle: "Abdominal & GI",
     tagline:
-      "Hernia repair, gastric, bowel, anorectal, and selected liver and pancreatic surgical care.",
+      "I repair hernias and treat stomach or bowel conditions safely.",
     icon: "abdominal",
     image: "/images/services/hernia.png",
     overviewSections: serviceOverviews["abdominal-gi-surgery"],
@@ -848,7 +848,7 @@ export const services: Service[] = [
     title: "General & Day Care Surgery",
     shortTitle: "General & Day Care",
     tagline:
-      "Day-care procedures for cysts, corn, abscess, circumcision, ingrown nail, varicose veins, and diabetic foot.",
+      "I treat cysts, abscesses, corns, and ingrown nails safely same-day.",
     icon: "general",
     image: "/images/services/general.png",
     overviewSections: serviceOverviews["general-day-care-surgery"],

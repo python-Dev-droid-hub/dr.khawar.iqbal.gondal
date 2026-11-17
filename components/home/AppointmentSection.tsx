@@ -11,15 +11,15 @@ import { whatsappLink } from "@/lib/utils";
 const tips = [
   {
     icon: FileText,
-    text: "Bring previous reports and imaging to your first visit when possible.",
+    text: "Carry any past lab tests, ultrasounds, or prescriptions so I can review your full health picture.",
   },
   {
     icon: Clock3,
-    text: "Weekday clinics in Gujrat · weekend hours in Mandi Bahauddin.",
+    text: "I consult Monday to Friday in Gujrat and Saturday to Sunday in Mandi Bahauddin.",
   },
   {
     icon: PhoneCall,
-    text: "For urgent symptoms, call the hospital numbers directly.",
+    text: "Experiencing severe or sudden pain? Please call my hospital desk right away for urgent help.",
   },
 ] as const;
 
@@ -29,11 +29,11 @@ export default function AppointmentSection() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Appointments"
-            title="Request a consultation"
-            description="Share a few details and the clinic will confirm the next available slot at your preferred hospital."
+            eyebrow="Book an Appointment"
+            title="Schedule Your Surgical Consultation With Me"
+            description="Share your details below, and my team will confirm your preferred appointment time at Shifa Hospital (Gujrat) or Tarar Hospital (Mandi Bahauddin)."
             align="left"
-            className="mb-8 max-w-2xl md:mb-10"
+            className="mb-8 max-w-3xl md:mb-10"
           />
         </Reveal>
 
@@ -42,10 +42,11 @@ export default function AppointmentSection() {
             <aside className="overflow-hidden rounded-card border border-teal-950/5 bg-gradient-to-br from-[#F3E8D2] via-cream to-gold/20 shadow-soft">
               <div className="p-6 md:p-7">
                 <h3 className="font-serif text-xl text-heading md:text-2xl">
-                  Before you visit
+                  Helpful Tips Before Your Visit
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  A few tips so your consultation is smooth and productive.
+                  A few quick reminders so I can give you the best care during
+                  our checkup.
                 </p>
 
                 <ul className="mt-6 space-y-4">

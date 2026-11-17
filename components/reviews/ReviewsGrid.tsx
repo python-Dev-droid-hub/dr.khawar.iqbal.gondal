@@ -14,10 +14,10 @@ export default function ReviewsGrid() {
           <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-dark">
-                Patient reviews
+                Reviews
               </p>
               <h2 className="mt-2 font-serif text-2xl text-heading sm:text-3xl md:text-4xl">
-                What patients say
+                What Our Patients Say
               </h2>
             </div>
             <p className="text-sm text-muted sm:text-right">
@@ -52,9 +52,10 @@ export default function ReviewsGrid() {
                   <Image
                     src={review.avatar.src}
                     alt={review.avatar.alt}
+                    title={review.avatar.alt}
                     width={44}
                     height={44}
-                    className="h-11 w-11 rounded-full object-cover"
+                    className="h-11 w-11 rounded-full object-cover object-[center_18%]"
                   />
                   <div>
                     <p className="font-semibold text-heading">{review.name}</p>

@@ -44,11 +44,11 @@ export default function FinalCTA() {
 
             <div className="relative z-10 mx-auto max-w-2xl">
               <h2 className="font-serif text-2xl text-cream sm:text-3xl md:text-4xl lg:text-5xl">
-                Take the first step toward better health
+                Ready to Discuss Your Health With Me?
               </h2>
               <p className="mt-4 text-sm text-cream/75 md:text-base">
-                Book your consultation today and take a calm, informed step
-                toward recovery.
+                Visit me in Gujrat or Mandi Bahauddin for honest surgical advice
+                and a safe path back to comfort.
               </p>
               <Button href="/book" variant="gold" className="mt-8">
                 Book Consultation

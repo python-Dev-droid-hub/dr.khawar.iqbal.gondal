@@ -30,25 +30,25 @@ export default function ServiceCard({ service, className }: ServiceCardProps) {
       >
         <Image
           src={service.image}
-          alt=""
+          alt={`${service.title} illustration`}
+          title={`${service.title} — surgical care in Gujrat & Mandi Bahauddin`}
           width={520}
           height={520}
-          // Decorative: title/tagline adjacent; empty alt avoids duplicate announcement
           className={cn(
             "absolute object-contain transition duration-500 group-hover:scale-105",
             isFeatured
               ? "-right-10 top-0 h-[88%] w-auto max-w-[68%] opacity-35 sm:-right-8 sm:max-w-[78%] sm:opacity-45 group-hover:opacity-60"
-              : "-right-10 bottom-0 top-10 m-auto h-[70%] w-auto max-w-[58%] opacity-45 sm:-right-6 sm:top-8 sm:h-[78%] sm:max-w-[72%] sm:opacity-75 md:opacity-85 group-hover:opacity-100",
+              : "-right-4 bottom-2 top-auto h-[48%] w-auto max-w-[42%] opacity-40 sm:-right-2 sm:bottom-3 sm:h-[52%] sm:max-w-[46%] sm:opacity-55 md:h-[55%] md:max-w-[48%] md:opacity-65 group-hover:opacity-80",
           )}
-          sizes="(max-width: 640px) 50vw, (max-width: 768px) 60vw, 320px"
+          sizes="(max-width: 640px) 40vw, (max-width: 768px) 35vw, 220px"
         />
-        {/* Soft fade so copy stays readable over art on mobile */}
+        {/* Soft fade so copy stays readable over art */}
         <div
           className={cn(
-            "absolute inset-y-0 left-0 w-[72%] sm:w-[55%] md:w-[48%]",
+            "absolute inset-y-0 left-0 w-[78%] sm:w-[62%] md:w-[58%]",
             isFeatured
               ? "bg-gradient-to-r from-[rgb(1_24_57)] via-[rgb(1_24_57/0.85)] to-transparent"
-              : "bg-gradient-to-r from-cream-dark/95 via-cream-dark/80 to-transparent",
+              : "bg-gradient-to-r from-cream-dark via-cream-dark/90 to-transparent",
           )}
         />
       </div>

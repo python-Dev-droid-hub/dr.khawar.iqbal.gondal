@@ -10,11 +10,11 @@ export default function PatientSuccessStories() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Outcomes"
-            title="Patient Success Stories"
-            description="Short case summaries that reflect common journeys through consultation, surgery, and recovery."
+            eyebrow="Patient Outcomes"
+            title="Real Patient Stories & Safe Recoveries"
+            description="See how I help everyday patients across Gujrat and Mandi Bahauddin recover safely from common surgical conditions and return to normal life."
             align="center"
-            className="mb-12 md:mb-14"
+            className="mb-12 max-w-3xl md:mb-14"
           />
         </Reveal>
 

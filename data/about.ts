@@ -119,25 +119,25 @@ export const memberships: Membership[] = [
 
 export const carePhilosophy = {
   quote:
-    "Surgery should feel clear, calm, and carefully chosen — never rushed. I explain options in plain language, prefer the least invasive safe approach, and stay available through recovery so patients never feel alone in the process.",
+    "A good surgeon treats the person, not just the scan. I only recommend surgery when truly needed, guide you step by step with steady precision, and remain reachable for families across Gujrat and Mandi Bahauddin throughout recovery.",
   attribution: "Dr. Khawar Iqbal Gondal",
   pillars: [
     {
       id: "p1",
-      title: "Clarity first",
-      text: "Honest discussion of risks, benefits, and alternatives before any operation.",
+      title: "Clarity First",
+      text: "I explain every surgical option, benefit, and risk clearly beforehand.",
       icon: "clarity" as const,
     },
     {
       id: "p2",
-      title: "Minimally invasive when suitable",
-      text: "Laparoscopic techniques to reduce pain, scarring, and recovery time.",
+      title: "Minimally Invasive When Suitable",
+      text: "I choose tiny-cut keyhole methods whenever safe for easier healing.",
       icon: "minimally" as const,
     },
     {
       id: "p3",
-      title: "Continuity of care",
-      text: "Support from consultation through follow-up at both hospital clinics.",
+      title: "Continuity of Care",
+      text: "I support your full recovery across both my hospital clinics.",
       icon: "continuity" as const,
     },
   ],

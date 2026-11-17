@@ -7,38 +7,39 @@ export type FAQ = {
 export const faqs: FAQ[] = [
   {
     id: "faq-1",
-    question: "What is laparoscopic surgery?",
+    question: "Where and when can I consult Dr. Khawar Iqbal Gondal?",
     answer:
-      "Laparoscopic (keyhole) surgery uses small incisions and a camera to operate inside the abdomen. Compared with open surgery, it typically means less pain, smaller scars, and a faster return to normal activity for many patients.",
+      "I see patients Monday through Friday at Shifa Hospital on Jail Road, Gujrat, and on weekends at Tarar Hospital in Mandi Bahauddin starting Saturday at 4 PM and Sunday at 10 AM.",
   },
   {
     id: "faq-2",
-    question: "How long is recovery after gallbladder surgery?",
+    question: "How can I book an appointment for a surgical checkup?",
     answer:
-      "Most patients go home the same day or within 24 hours after laparoscopic cholecystectomy. Light activity often resumes within a few days, with a gradual return to full routine over one to two weeks, depending on your healing and the nature of your work.",
+      "You can book your visit easily by calling or messaging +92 326 6493614 or +92 371 6528331 to confirm your consultation slot in either Gujrat or Mandi Bahauddin.",
   },
   {
     id: "faq-3",
-    question: "When should I see a surgeon for a hernia?",
+    question: "What surgical experience does Dr. Khawar Iqbal Gondal have?",
     answer:
-      "Book a consultation if you notice a bulge, discomfort, or pain in the groin or abdomen — especially if symptoms worsen with standing, coughing, or lifting. Early evaluation helps prevent complications such as incarceration.",
+      "I have practiced surgery since 2002 with over 24 years of experience, 1,000+ successful operations, and service as Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.",
   },
   {
     id: "faq-4",
-    question: "Do you offer same-day discharge?",
+    question: "Is keyhole (laparoscopic) surgery better than open surgery?",
     answer:
-      "Yes, for selected laparoscopic procedures and medically suitable patients. Dr. Khawar will confirm whether same-day discharge is appropriate after reviewing your health history, procedure type, and recovery support at home.",
+      "Whenever your condition allows, I recommend tiny-cut keyhole surgery because it causes much less pain, leaves barely visible marks, and helps you return home and heal faster.",
   },
   {
     id: "faq-5",
-    question: "How do I book an appointment?",
+    question:
+      "Can I visit you just for a second opinion before deciding on surgery?",
     answer:
-      "You can book online through the Book Appointment page, call either hospital number, or message on WhatsApp at +92 326 6493614. Share your preferred location (Gujrat or Mandi Bahauddin) and a brief note about your concern.",
+      "Yes, I welcome patients seeking an honest second opinion. I will review your medical reports carefully, examine you thoroughly, and explain whether surgery is truly needed in simple words.",
   },
   {
     id: "faq-6",
-    question: "What should I bring to my first consultation?",
+    question: "What should I bring to my first surgical consultation?",
     answer:
-      "Please bring previous reports, ultrasound or CT scans, a current medication list, and any referral notes. Wearing loose, comfortable clothing helps if a physical examination is needed.",
+      "Please bring your previous prescriptions, blood test reports, ultrasound or scan films, and a list of any daily medicines you take so I can evaluate your condition accurately.",
   },
 ];

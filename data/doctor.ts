@@ -15,13 +15,13 @@ export const doctor = {
   whatsapp: "+923266493614",
   whatsappDisplay: "+92 326 6493614",
   email: "appointments@drkhawar.pk",
-  tagline: "Precision Surgery. Faster Recovery.",
+  tagline: "24+ Years of Surgical Precision. Patient-First Recovery.",
   subtitle:
-    "Minimally invasive laparoscopic care with advanced techniques and compassionate care.",
+    "Consultant Surgeon Dr. Khawar Iqbal Gondal delivers trusted general and laparoscopic care with over 1,000 successful procedures across Gujrat and Mandi Bahauddin.",
   bio: "Dr. Khawar Iqbal Gondal is a laparoscopic and general surgeon serving patients across Gujrat and Mandi Bahauddin. He specializes in minimally invasive techniques that reduce hospital stay, minimize scarring, and support faster recovery — with clear communication at every step of care.",
   aboutExtended: [
-    `With over ${new Date().getFullYear() - CAREER_START_YEAR} years of surgical experience since ${CAREER_START_YEAR} and more than 1,000 successful procedures, Dr. Khawar combines precise technique with a calm, patient-first approach. He previously served as Registrar in Surgery at Services Hospital and Senior Registrar in Surgery at Mayo Hospital, and has worked as Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.`,
-    "Patients are seen at Shifa Hospital (Gujrat) and Tarar Hospital (Mandi Bahauddin), with flexible weekday and weekend consultation hours. Whether you need a second opinion or are preparing for surgery, you can expect thorough evaluation, honest guidance, and attentive follow-up.",
+    "I have been helping patients through surgery since 2002. Over the past 24 years, I have performed more than 1,000 successful operations, focusing on safe, careful treatment and a calm, reassuring experience for every patient. Before joining Aziz Bhatti Shaheed Hospital as a Consultant Surgeon in 2012, I served in senior surgical roles at two of Pakistan’s leading hospitals—Services Hospital and Mayo Hospital.",
+    "Today, I see patients at Shifa Hospital (Jail Road, Gujrat) on weekdays and Tarar Hospital (Mandi Bahauddin) on weekends. Whether you are visiting me for a second opinion or preparing for surgery, I take the time to examine you thoroughly, explain your options in simple words, and guide you closely until you make a full recovery.",
   ],
   specialties: [
     "Laparoscopic Surgery",

@@ -14,9 +14,8 @@ export default function FAQSection() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="FAQ"
-            title="Frequently Asked Questions"
-            description="Quick answers about laparoscopic surgery, recovery, and booking."
+            title="FAQs"
+            description="I answer your common questions about surgery, recovery, and appointments."
             align="left"
             className="mb-8 max-w-2xl md:mb-10"
           />
@@ -52,6 +51,7 @@ export default function FAQSection() {
                   <Image
                     src="/images/stethoscope.jpg"
                     alt="Stethoscope representing medical consultation"
+                    title="Medical consultation — ask about surgery and recovery"
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 340px"

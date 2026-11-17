@@ -16,8 +16,8 @@ export default function ServicesBento() {
         <Reveal>
           <SectionHeading
             eyebrow="Surgical Services"
-            title="Comprehensive Surgical Care"
-            description="Minimally invasive and general surgery tailored to your condition and recovery goals."
+            title="General & Keyhole Surgical Care I Provide"
+            description="I perform tiny-cut keyhole operations for faster, nearly painless recovery."
             align="center"
             className="mb-12"
           />

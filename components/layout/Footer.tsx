@@ -70,9 +70,9 @@ export default function Footer() {
                 />
               </Link>
               <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/70 md:text-base">
-                Minimally invasive laparoscopic and general surgery with a focus
-                on precision, safety, and faster recovery for patients across
-                Gujrat and Mandi Bahauddin.
+                With over 24+ years of surgical experience, I offer safe keyhole
+                operations and honest second opinions across Gujrat and Mandi
+                Bahauddin.
               </p>
               <div className="mt-6 flex gap-3">
                 <a
@@ -101,13 +101,14 @@ export default function Footer() {
 
             <aside className="rounded-card bg-gold-gradient p-6 text-teal-950 shadow-gold md:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-900/70">
-                Ready when you are
+                Visit My Clinic
               </p>
               <h2 className="mt-2 font-serif text-2xl md:text-3xl">
-                Book a Consultation
+                Plan Your Visit With Me!
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-teal-950/75">
-                Weekday clinics in Gujrat and weekend hours in Mandi Bahauddin.
+                I see patients on weekdays in Gujrat and weekends in Mandi
+                Bahauddin for calm, honest surgical guidance.
               </p>
               <Button href="/book" variant="dark" className="mt-6">
                 Book Appointment

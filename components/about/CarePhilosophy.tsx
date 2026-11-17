@@ -22,11 +22,11 @@ export default function CarePhilosophy() {
       <Container className="relative">
         <Reveal>
           <SectionHeading
-            eyebrow="Philosophy"
-            title="My Philosophy of Care"
-            description="A patient-first approach that values clarity, careful technique, and continuity."
+            eyebrow="My Surgical Promise"
+            title="My Philosophy of Patient Care"
+            description="Treating every patient in Gujrat and Mandi Bahauddin with the same honesty and care I would give my own family."
             align="center"
-            className="mb-10 md:mb-12"
+            className="mb-10 max-w-3xl md:mb-12"
           />
         </Reveal>
 

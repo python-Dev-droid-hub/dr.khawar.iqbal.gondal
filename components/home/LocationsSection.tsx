@@ -13,11 +13,11 @@ export default function LocationsSection() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Locations"
-            title="Where to find us"
-            description="Consultation clinics in Gujrat and Mandi Bahauddin with clear timings and directions."
+            eyebrow="Visit My Clinic"
+            title="Plan Your Visit With Me!"
+            description="I see patients on weekdays in Gujrat and weekends in Mandi Bahauddin for calm, honest surgical guidance."
             align="center"
-            className="mb-12"
+            className="mb-12 max-w-3xl"
           />
         </Reveal>
 

@@ -45,9 +45,9 @@ export default function ServicesPage() {
         })}
       />
       <PageHero
-        eyebrow="Services"
-        title="Surgical services"
-        description="Evidence-based laparoscopic and general surgery designed for safety, clarity, and faster recovery."
+        eyebrow="Surgical Treatments"
+        title="Keyhole & General Surgery Services"
+        description="I perform safe, modern operations for gallstones, hernias, appendix, piles, and thyroid conditions at Shifa Hospital Gujrat and Tarar Hospital Mandi Bahauddin."
         image={pageBanners.services}
         breadcrumbs={[
           { label: "Home", href: "/" },

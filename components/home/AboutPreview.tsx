@@ -140,7 +140,7 @@ export default function AboutPreview() {
           <Reveal delay={0.08}>
             <SectionHeading
               eyebrow="About the Surgeon"
-              title={`About ${doctor.name}`}
+              title={`Meet ${doctor.name}`}
               description={doctor.aboutExtended[0]}
               align="left"
               className="[&_h2]:text-xl [&_h2]:leading-snug min-[400px]:[&_h2]:text-2xl sm:[&_h2]:text-3xl [&_p]:mt-2 [&_p]:line-clamp-4 [&_p]:text-sm sm:[&_p]:line-clamp-none sm:[&_p]:text-base"
@@ -181,7 +181,7 @@ export default function AboutPreview() {
           <Reveal delay={0.1}>
             <SectionHeading
               eyebrow="About the Surgeon"
-              title={`About ${doctor.name}`}
+              title={`Meet ${doctor.name}`}
               description={doctor.aboutExtended[0]}
               align="left"
             />

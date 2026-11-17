@@ -10,11 +10,15 @@ import { formatDate } from "@/lib/utils";
 import { pageBanners } from "@/data/pageBanners";
 import { blogIndexJsonLd } from "@/lib/blog-json-ld";
 import { createPageMetadata } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Patient Education Blog — Surgery & Recovery Guides";
+const pageDescription =
+  "Guides on gallbladder surgery recovery, hernia warning signs, and minimally invasive surgery for patients in Gujrat and Mandi Bahauddin.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Patient Education Blog — Surgery & Recovery Guides",
-  description:
-    "Guides on gallbladder surgery recovery, hernia warning signs, and minimally invasive surgery for patients in Gujrat and Mandi Bahauddin.",
+  title: pageTitle,
+  description: pageDescription,
   path: "/blog",
   keywords: ["gallbladder surgery recovery", "hernia symptoms Pakistan"],
 });
@@ -22,6 +26,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function BlogPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/blog",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+          ],
+        })}
+      />
       <JsonLd data={blogIndexJsonLd()} />
       <PageHero
         eyebrow="Blog"

@@ -10,8 +10,8 @@ export default function PatientJourney() {
         <Reveal>
           <SectionHeading
             eyebrow="Your Path to Care"
-            title="The Surgery Journey"
-            description="A clear, supported process from first consultation through recovery and follow-up."
+            title="Your Step-by-Step Surgery Journey with Me"
+            description="From your very first visit in Gujrat or Mandi Bahauddin to complete healing at home, I guide you clearly through every stage."
             align="center"
             className="mb-14"
           />
@@ -19,7 +19,7 @@ export default function PatientJourney() {
 
         <div className="relative">
           <div className="absolute left-0 right-0 top-7 hidden h-px bg-gold/40 lg:block" />
-          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {journeySteps.map((step, index) => (
               <Reveal key={step.id} delay={0.06 * index}>
                 <li className="relative text-center lg:text-left">

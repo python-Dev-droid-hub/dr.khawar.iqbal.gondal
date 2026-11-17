@@ -90,7 +90,7 @@ export default function Hero() {
     <section className="dark-section relative z-0 !overflow-visible">
       <h1 className="sr-only">
         {doctor.tagline} — {doctor.name}, Laparoscopic &amp; General Surgeon in
-        Gujrat and Mandi Bahauddin
+        Gujrat &amp; Mandi Bahauddin
       </h1>
       <svg
         className="pointer-events-none absolute inset-x-0 top-10 hidden h-[65%] w-full opacity-35 lg:block"
@@ -144,23 +144,24 @@ export default function Hero() {
             <img
               src={doctor.portrait.src}
               alt={doctor.portrait.alt}
+              title={doctor.portrait.alt}
               className="relative -mb-28 block h-full w-full object-contain object-bottom drop-shadow-[0_28px_44px_rgba(0,0,0,0.5)] sm:-mb-32 md:-mb-36"
             />
           </div>
 
           {/* Text + CTAs — left side, clear of imagery */}
-          <div className="relative z-30 w-[54%] max-w-[17.5rem] pb-8 pt-1 sm:w-[52%] sm:max-w-[22rem] sm:pb-10">
-            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-light sm:mb-3 sm:text-[11px] sm:tracking-[0.22em]">
-              Laparoscopic &amp; General Surgery
+          <div className="relative z-30 w-[58%] max-w-[19rem] pb-8 pt-1 sm:w-[54%] sm:max-w-[24rem] sm:pb-10">
+            <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-gold-light sm:mb-3 sm:text-[11px] sm:tracking-[0.18em]">
+              Laparoscopic &amp; General Surgery | Gujrat &amp; Mandi Bahauddin
             </p>
 
-            <p className="font-serif text-[1.7rem] leading-[1.08] text-cream min-[380px]:text-[1.9rem] min-[420px]:text-[2.1rem] sm:text-[2.45rem] md:text-[2.7rem]">
-              <span className="block">Precision Surgery.</span>
-              <span className="mt-0.5 block text-cream">Faster Recovery.</span>
+            <p className="font-serif text-[1.35rem] leading-[1.15] text-cream min-[380px]:text-[1.5rem] min-[420px]:text-[1.65rem] sm:text-[1.95rem] md:text-[2.15rem]">
+              <span className="block">24+ Years of Surgical Precision.</span>
+              <span className="mt-0.5 block text-cream">Patient-First Recovery.</span>
             </p>
 
             <p className="mt-2.5 text-[13px] leading-relaxed text-cream/75 min-[400px]:text-sm sm:mt-3.5 sm:text-base">
-              Minimally invasive laparoscopic care with advanced techniques.
+              {doctor.subtitle}
             </p>
 
             <div className="mt-3.5 flex max-w-[15.5rem] flex-col gap-2.5 sm:mt-5 sm:max-w-none sm:flex-row sm:flex-wrap sm:gap-3">
@@ -193,21 +194,21 @@ export default function Hero() {
         ref={stageRef}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        className="relative mx-auto hidden w-full max-w-[1440px] grid-cols-[34%_42%_24%] items-end gap-0 px-12 pb-0 pt-28 lg:grid lg:min-h-[640px]"
+        className="relative mx-auto hidden w-full max-w-[1440px] grid-cols-[40%_38%_22%] items-end gap-0 px-12 pb-0 pt-28 lg:grid lg:min-h-[640px]"
       >
-        <div className="relative z-30 max-w-[560px] self-center pb-20">
-          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-cream/90">
-            Laparoscopic &amp; General Surgery
+        <div className="relative z-30 max-w-[34rem] self-center pb-20">
+          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream/90 xl:tracking-[0.22em]">
+            Laparoscopic &amp; General Surgery | Gujrat &amp; Mandi Bahauddin
             <span
-              className="h-px w-14 bg-gradient-to-r from-cream/45 to-transparent"
+              className="h-px w-14 shrink-0 bg-gradient-to-r from-cream/45 to-transparent"
               aria-hidden
             />
           </p>
 
           {/* Visual twin of mobile H1 — CSS-hidden mobile H1 stays the document outline on small screens */}
-          <p className="font-serif text-[2.9rem] leading-[1.1] text-cream xl:text-[3.2rem]">
-            <span className="block">Precision Surgery.</span>
-            <span className="mt-1 block text-gold-light">Faster Recovery.</span>
+          <p className="font-serif text-[2.1rem] leading-[1.15] text-cream xl:text-[2.45rem]">
+            <span className="block">24+ Years of Surgical Precision.</span>
+            <span className="mt-1 block text-gold-light">Patient-First Recovery.</span>
           </p>
 
           <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-cream/75">
@@ -305,6 +306,7 @@ export default function Hero() {
             <img
               src={doctor.portrait.src}
               alt={doctor.portrait.alt}
+              title={doctor.portrait.alt}
               className="block h-full w-auto max-w-none object-contain object-bottom drop-shadow-[0_28px_48px_rgba(0,0,0,0.45)]"
             />
           </motion.div>

@@ -3,7 +3,7 @@ export type JourneyStep = {
   step: number;
   title: string;
   description: string;
-  icon: "consult" | "diagnosis" | "surgery" | "recovery" | "followup";
+  icon: "consult" | "diagnosis" | "surgery" | "followup";
 };
 
 export const journeySteps: JourneyStep[] = [
@@ -12,7 +12,7 @@ export const journeySteps: JourneyStep[] = [
     step: 1,
     title: "Consultation",
     description:
-      "Share your symptoms and history.\nWe outline next steps clearly.",
+      "I listen carefully to your symptoms and health history, then explain your options in simple words.",
     icon: "consult",
   },
   {
@@ -20,7 +20,7 @@ export const journeySteps: JourneyStep[] = [
     step: 2,
     title: "Diagnosis",
     description:
-      "Review exams and imaging together.\nConfirm the safest treatment path.",
+      "I review your checkup and test reports with you to confirm the safest treatment plan.",
     icon: "diagnosis",
   },
   {
@@ -28,23 +28,15 @@ export const journeySteps: JourneyStep[] = [
     step: 3,
     title: "Surgery",
     description:
-      "Precise laparoscopic or open care.\nSafety and comfort come first.",
+      "I give you clear home rest, diet, and dressing instructions so you heal smoothly and confidently.",
     icon: "surgery",
   },
   {
     id: "j4",
     step: 4,
-    title: "Recovery",
-    description:
-      "Follow a simple activity plan.\nWound care guidance included.",
-    icon: "recovery",
-  },
-  {
-    id: "j5",
-    step: 5,
     title: "Follow-up",
     description:
-      "Post-op review when you need it.\nLong-term guidance stays available.",
+      "I check your healing progress personally and remain available whenever you need ongoing medical advice.",
     icon: "followup",
   },
 ];

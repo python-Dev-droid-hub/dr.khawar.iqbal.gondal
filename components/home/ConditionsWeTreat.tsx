@@ -36,8 +36,8 @@ export default function ConditionsWeTreat() {
         <Reveal>
           <SectionHeading
             eyebrow="Conditions"
-            title="Conditions We Treat"
-            description="Focused surgical care for common abdominal and general surgery conditions."
+            title="Surgical Conditions Treated by Dr. Khawar Iqbal Gondal"
+            description="Safe, modern keyhole (laparoscopic) and general surgery for gallbladder, hernia, appendix, and abdominal problems in Gujrat and Mandi Bahauddin."
             align="center"
             className="mb-10 md:mb-12"
           />

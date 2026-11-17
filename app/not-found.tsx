@@ -12,6 +12,7 @@ export default function NotFound() {
         <Image
           src="/images/logo-on-dark.png"
           alt="Dr. Khawar Laparoscopy & Surgical Centre"
+          title="Dr. Khawar Laparoscopy & Surgical Centre — Gujrat & Mandi Bahauddin"
           width={926}
           height={343}
           className="mx-auto mb-6 h-14 w-auto max-w-[260px] object-contain"

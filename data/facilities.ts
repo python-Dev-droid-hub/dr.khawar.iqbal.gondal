@@ -10,21 +10,21 @@ export const facilities: Facility[] = [
     id: "hd",
     title: "HD Laparoscopy",
     description:
-      "High-definition camera guidance for precise visualisation during keyhole procedures.",
+      "I use clear, high-definition camera guidance to perform delicate keyhole operations with high precision.",
     icon: "hd",
   },
   {
     id: "theatre",
     title: "Modern Operation Theatre",
     description:
-      "Hospital theatres equipped for elective and urgent general surgical care.",
+      "I operate in fully equipped hospital theatres designed for both planned and urgent surgical care.",
     icon: "theatre",
   },
   {
     id: "sterile",
     title: "Sterile Care",
     description:
-      "Strict aseptic protocols to protect patients before, during, and after surgery.",
+      "I enforce strict cleanliness protocols to protect you safely before, during, and after your surgery.",
     icon: "sterile",
   },
 ];

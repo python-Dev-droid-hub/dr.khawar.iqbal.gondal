@@ -36,15 +36,12 @@ export default function AboutProfile() {
 
         <Reveal delay={0.1}>
           <SectionHeading
-            eyebrow={doctor.credentials}
-            title={doctor.name}
-            description={doctor.title}
+            eyebrow="About the Surgeon"
+            title={`Meet ${doctor.name}`}
+            description={doctor.aboutExtended[0]}
             align="left"
           />
-          <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-            {doctor.aboutExtended[0]}
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted">
+          <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
             {doctor.aboutExtended[1]}
           </p>
 

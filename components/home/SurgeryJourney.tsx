@@ -11,7 +11,6 @@ import {
 } from "framer-motion";
 import {
   ClipboardPlus,
-  HeartPulse,
   Microscope,
   Stethoscope,
   Syringe,
@@ -29,7 +28,6 @@ const iconMap: Record<
   consult: Stethoscope,
   diagnosis: Microscope,
   surgery: Syringe,
-  recovery: HeartPulse,
   followup: ClipboardPlus,
 };
 
@@ -50,8 +48,8 @@ export default function SurgeryJourney() {
         <Reveal>
           <SectionHeading
             eyebrow="Your Path to Care"
-            title="Your Surgery Journey"
-            description="A clear, supported process from first consultation through recovery and follow-up."
+            title="Your Step-by-Step Surgery Journey with Me"
+            description="From your very first visit in Gujrat or Mandi Bahauddin to complete healing at home, I guide you clearly through every stage."
             align="center"
             className="mb-14"
           />
@@ -88,10 +86,9 @@ export default function SurgeryJourney() {
             transition={{ duration: 0.8 }}
           />
 
-          <ol className="relative grid gap-10 lg:grid-cols-5 lg:gap-4">
+          <ol className="relative grid gap-10 lg:grid-cols-4 lg:gap-6">
             {journeySteps.map((step, index) => {
               const Icon = iconMap[step.icon];
-              const lines = step.description.split("\n");
               return (
                 <Reveal key={step.id} delay={0.06 * index}>
                   <li className="relative flex gap-5 lg:flex-col lg:gap-0">
@@ -106,9 +103,7 @@ export default function SurgeryJourney() {
                         {step.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted">
-                        {lines[0]}
-                        <br />
-                        {lines[1]}
+                        {step.description}
                       </p>
                     </div>
                   </li>

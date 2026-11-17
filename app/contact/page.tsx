@@ -42,9 +42,9 @@ export default function ContactPage() {
         })}
       />
       <PageHero
-        eyebrow="Contact"
-        title="Get in touch"
-        description="Reach the clinic by phone, WhatsApp, or the appointment form below."
+        eyebrow="Reach My Clinic"
+        title="Get in Touch With Me!"
+        description="Call, send a WhatsApp message, or fill out the form below to book your visit with me at Shifa Hospital or Tarar Hospital."
         image={pageBanners.contact}
         breadcrumbs={[
           { label: "Home", href: "/" },

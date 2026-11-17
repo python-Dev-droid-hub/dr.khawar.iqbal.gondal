@@ -9,26 +9,29 @@ export type SuccessStory = {
 export const successStories: SuccessStory[] = [
   {
     id: "s1",
-    title: "Back to work in a week",
-    condition: "Gallbladder stones",
+    title: "Back to Teaching in Seven Days",
+    condition: "Gallbladder Stones",
     summary:
-      "A Gujrat teacher with recurring biliary pain underwent laparoscopic cholecystectomy after ultrasound confirmation.",
-    outcome: "Same-day discharge and return to classroom duties within seven days.",
+      "A schoolteacher from Gujrat suffered from repeated upper stomach pain. After checking his ultrasound, I removed his gallbladder using tiny-cut keyhole surgery.",
+    outcome:
+      "Went home the same day and returned to teaching comfortably within one week",
   },
   {
     id: "s2",
-    title: "Hernia repaired without long leave",
-    condition: "Inguinal hernia",
+    title: "Hernia Fixed Without Long Time Off",
+    condition: "Groin Hernia",
     summary:
-      "A Mandi Bahauddin shopkeeper delayed care until lifting became painful. Mesh repair was planned around his schedule.",
-    outcome: "Comfortable recovery with guided activity and no recurrence at follow-up.",
+      "A shopkeeper in Mandi Bahauddin put off treatment until lifting caused daily pain. I planned a strong mesh hernia repair around his work hours.",
+    outcome:
+      "Smooth healing with simple movement guidance and zero pain at his follow-up visit.",
   },
   {
     id: "s3",
-    title: "Swift relief from appendicitis",
-    condition: "Acute appendicitis",
+    title: "Fast Relief from Appendix Pain",
+    condition: "Sudden Appendicitis",
     summary:
-      "Evening abdominal pain and fever led to urgent evaluation and laparoscopic appendectomy the same night.",
-    outcome: "Short hospital stay and a clear wound-care plan for home recovery.",
+      "When evening stomach pain and fever struck, I examined the patient immediately and performed an urgent keyhole appendix removal that same night.",
+    outcome:
+      "Brief hospital stay with easy home dressing steps for a worry-free recovery.",
   },
 ];

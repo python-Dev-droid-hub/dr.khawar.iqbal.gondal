@@ -39,6 +39,7 @@ export default function ServicesPreview() {
               <Image
                 src={featured.image}
                 alt={`${featured.title} illustration`}
+                title={`${featured.title} — surgical care in Gujrat & Mandi Bahauddin`}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -115,7 +115,7 @@ export default function Navbar() {
           </Link>
 
           <nav
-            className="hidden items-center gap-1 xl:flex"
+            className="hidden items-center gap-0.5 lg:flex lg:gap-1"
             aria-label="Primary"
           >
             {mainNav.map((item) => {
@@ -263,7 +263,7 @@ export default function Navbar() {
             <button
               type="button"
               className={cn(
-                "inline-flex h-10 w-10 items-center justify-center rounded-full border xl:hidden",
+                "inline-flex h-10 w-10 items-center justify-center rounded-full border lg:hidden",
                 solid
                   ? "border-teal-950/15 text-teal-950"
                   : "border-cream/30 text-cream",
@@ -283,7 +283,7 @@ export default function Navbar() {
         {open ? (
           <motion.div
             id="mobile-nav"
-            className="fixed inset-0 z-[55] min-h-dvh bg-cream xl:hidden"
+            className="fixed inset-0 z-[55] min-h-dvh bg-cream lg:hidden"
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0 }}

@@ -37,9 +37,10 @@ export default function Testimonials() {
                 <Image
                   src={testimonials[active].avatar.src}
                   alt={testimonials[active].avatar.alt}
+                  title={testimonials[active].avatar.alt}
                   width={64}
                   height={64}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-[center_18%]"
                 />
               </div>
               <div className="mb-4 flex justify-center gap-1" aria-label="5 star rating">

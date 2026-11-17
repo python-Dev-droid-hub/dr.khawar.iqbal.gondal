@@ -38,8 +38,9 @@ export default function ServiceTestimonials({
                   <Image
                     src={item.avatar.src}
                     alt={item.avatar.alt}
+                    title={item.avatar.alt}
                     fill
-                    className="object-cover"
+                    className="object-cover object-[center_18%]"
                     sizes="48px"
                   />
                 </div>

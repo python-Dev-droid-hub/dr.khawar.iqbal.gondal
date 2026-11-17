@@ -36,7 +36,7 @@ export default function TestimonialsCarousel() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Testimonials"
+            eyebrow="Reviews"
             title="What Our Patients Say"
             description="Words from patients treated in Gujrat and Mandi Bahauddin."
             align="center"
@@ -72,9 +72,10 @@ export default function TestimonialsCarousel() {
                         <Image
                           src={testimonials[active].avatar.src}
                           alt={testimonials[active].avatar.alt}
+                          title={testimonials[active].avatar.alt}
                           width={64}
                           height={64}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-[center_18%]"
                           sizes="64px"
                         />
                       </div>

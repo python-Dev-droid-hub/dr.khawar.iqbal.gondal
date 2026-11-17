@@ -20,8 +20,14 @@ export default function ConsultationCard() {
                   Quick Consultation
                 </p>
                 <h2 className="mt-2 font-serif text-[1.65rem] leading-tight text-heading sm:text-3xl">
-                  Our Consultation Locations
+                  Surgical Consultation Locations in Gujrat &amp; Mandi
+                  Bahauddin
                 </h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  Visit Dr. Khawar Iqbal Gondal for expert surgical
+                  consultations at Shifa Hospital Gujrat on weekdays and Tarar
+                  Hospital Mandi Bahauddin on weekends.
+                </p>
               </div>
 
               <div className="relative z-20 grid gap-3 sm:grid-cols-2 sm:gap-4">
@@ -87,11 +93,13 @@ export default function ConsultationCard() {
                   Quick Consultation
                 </p>
                 <h2 className="mt-3 font-serif text-3xl text-heading md:text-4xl">
-                  Our Consultation Locations
+                  Surgical Consultation Locations in Gujrat &amp; Mandi
+                  Bahauddin
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  Choose the clinic closest to you — weekday care in Gujrat and
-                  weekend hours in Mandi Bahauddin.
+                  Visit Dr. Khawar Iqbal Gondal for expert surgical
+                  consultations at Shifa Hospital Gujrat on weekdays and Tarar
+                  Hospital Mandi Bahauddin on weekends.
                 </p>
               </div>
 

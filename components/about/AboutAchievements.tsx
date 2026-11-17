@@ -11,10 +11,10 @@ export default function AboutAchievements() {
         <Reveal>
           <SectionHeading
             eyebrow="Achievements"
-            title="Experience that patients can feel"
-            description="Numbers that reflect years of operative practice and consistent patient trust."
+            title="Proven Surgical Experience in Every Number"
+            description="Over two decades of safe operations and dedicated patient care across leading hospitals."
             align="center"
-            className="mb-12"
+            className="mb-12 max-w-3xl"
           />
         </Reveal>
 

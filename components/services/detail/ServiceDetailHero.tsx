@@ -117,6 +117,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             <Image
               src={service.image}
               alt={`${service.title} illustration`}
+              title={`${service.title} — Dr. Khawar Iqbal Gondal`}
               fill
               priority
               className="object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"

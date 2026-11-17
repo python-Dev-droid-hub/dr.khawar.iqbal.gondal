@@ -42,6 +42,7 @@ export default function FAQPreview() {
               <Image
                 src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=600&q=80"
                 alt="Stethoscope representing medical consultation"
+                title="Medical consultation — ask about surgery and recovery"
                 fill
                 className="object-cover rounded-tl-[2rem]"
                 sizes="224px"

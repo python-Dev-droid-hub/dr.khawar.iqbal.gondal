@@ -19,9 +19,9 @@ export default function WhyLaparoscopic() {
       <Container className="relative">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Laparoscopic"
-            title="Laparoscopic vs Open Surgery"
-            description="When clinically suitable, keyhole surgery can mean smaller scars and a quicker return to daily life."
+            eyebrow="Why Keyhole Surgery?"
+            title="Keyhole (Laparoscopic) vs. Open Surgery: How I Choose What Is Best?"
+            description="Whenever your condition allows, I recommend tiny-cut keyhole surgery so you experience less pain, smaller marks, and a quicker return home."
             align="center"
             className="mb-10 md:mb-14"
           />
@@ -43,7 +43,7 @@ export default function WhyLaparoscopic() {
                 <div className="grid grid-cols-2">
                   <div className="border-r border-teal-950/8 bg-gold/10 p-4">
                     <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-dark">
-                      Laparoscopic
+                      Keyhole
                     </p>
                     <p className="flex items-start gap-2 text-sm font-medium leading-snug text-heading">
                       <Check
@@ -55,7 +55,7 @@ export default function WhyLaparoscopic() {
                   </div>
                   <div className="p-4">
                     <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
-                      Open surgery
+                      Open Surgery
                     </p>
                     <p className="flex items-start gap-2 text-sm leading-snug text-muted">
                       <Minus
@@ -89,26 +89,26 @@ export default function WhyLaparoscopic() {
                     aria-hidden
                   />
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-light">
-                    Preferred when suitable
+                    My First Choice When Safe
                   </p>
                   <h3 className="mt-2 font-serif text-2xl text-cream lg:text-[1.85rem]">
-                    Laparoscopic
+                    Keyhole (Laparoscopic) Surgery
                   </h3>
-                  <p className="mt-2 max-w-[20rem] text-sm leading-relaxed text-cream/65">
-                    Minimally invasive keyhole technique focused on comfort and
-                    recovery.
+                  <p className="mt-2 max-w-[22rem] text-sm leading-relaxed text-cream/65">
+                    I use tiny openings and a small camera to operate gently
+                    with easier healing.
                   </p>
                 </div>
                 <div className="bg-cream px-7 py-7 lg:px-9 lg:py-8">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">
-                    Traditional approach
+                    Traditional Method
                   </p>
                   <h3 className="mt-2 font-serif text-2xl text-heading lg:text-[1.85rem]">
-                    Open surgery
+                    Open Surgery
                   </h3>
-                  <p className="mt-2 max-w-[20rem] text-sm leading-relaxed text-muted">
-                    Larger incision technique still used when clinically
-                    required.
+                  <p className="mt-2 max-w-[22rem] text-sm leading-relaxed text-muted">
+                    I use a standard single cut when your medical condition
+                    makes it the safest choice.
                   </p>
                 </div>
               </div>

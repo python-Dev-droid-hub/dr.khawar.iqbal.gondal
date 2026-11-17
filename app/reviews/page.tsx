@@ -8,10 +8,14 @@ import { doctor } from "@/data/doctor";
 import { testimonials } from "@/data/testimonials";
 import { pageBanners } from "@/data/pageBanners";
 import { createPageMetadata, absoluteUrl } from "@/lib/site";
+import { webPageJsonLd } from "@/lib/structured-data";
+
+const pageTitle = "Patient Reviews — Dr. Khawar Iqbal Gondal";
+const pageDescription = `Read patient reviews and success stories for ${doctor.name}, laparoscopic surgeon in Gujrat and Mandi Bahauddin.`;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Patient Reviews — Dr. Khawar Iqbal Gondal",
-  description: `Read patient reviews and success stories for ${doctor.name}, laparoscopic surgeon in Gujrat and Mandi Bahauddin.`,
+  title: pageTitle,
+  description: pageDescription,
   path: "/reviews",
   keywords: [
     "Dr Khawar reviews",
@@ -52,11 +56,22 @@ function reviewsJsonLd() {
 export default function ReviewsPage() {
   return (
     <>
+      <JsonLd
+        data={webPageJsonLd({
+          path: "/reviews",
+          title: pageTitle,
+          description: pageDescription,
+          crumbs: [
+            { name: "Home", path: "/" },
+            { name: "Reviews", path: "/reviews" },
+          ],
+        })}
+      />
       <JsonLd data={reviewsJsonLd()} />
       <PageHero
-        eyebrow="Reviews"
-        title="Patient reviews & outcomes"
-        description="Real feedback from patients across Gujrat and Mandi Bahauddin — from consultation through recovery."
+        eyebrow="Patient Experiences"
+        title="What My Patients Say About Their Care?"
+        description="Read honest stories from families across Gujrat and Mandi Bahauddin who trusted me with their surgical checkups, operations, and healing."
         image={pageBanners.reviews}
         breadcrumbs={[
           { label: "Home", href: "/" },

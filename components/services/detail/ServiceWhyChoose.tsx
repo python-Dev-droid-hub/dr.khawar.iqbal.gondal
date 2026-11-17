@@ -33,6 +33,7 @@ export default function ServiceWhyChoose({ service }: ServiceWhyChooseProps) {
               <Image
                 src={doctor.aboutPortrait.src}
                 alt={doctor.aboutPortrait.alt}
+                title={doctor.aboutPortrait.alt}
                 fill
                 className="object-cover object-top"
                 sizes="96px"

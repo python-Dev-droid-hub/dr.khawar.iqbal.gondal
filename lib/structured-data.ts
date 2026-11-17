@@ -25,11 +25,23 @@ function areaServedJsonLd() {
 }
 
 function socialSameAs() {
+  const placeholders = new Set([
+    "https://facebook.com",
+    "https://www.facebook.com",
+    "https://instagram.com",
+    "https://www.instagram.com",
+    "https://linkedin.com",
+    "https://www.linkedin.com",
+  ]);
+
   return [
     doctor.social.facebook,
     doctor.social.instagram,
     doctor.social.linkedin,
-  ].filter(Boolean);
+  ].filter(
+    (url): url is string =>
+      Boolean(url) && !placeholders.has(url.replace(/\/$/, "")),
+  );
 }
 
 /** MedicalOrganization + practice identity for the whole site. */

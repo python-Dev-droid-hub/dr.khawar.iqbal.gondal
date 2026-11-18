@@ -6,7 +6,9 @@ export const siteConfig = {
   title: doctor.title,
   description:
     "Laparoscopic surgeon in Gujrat and Mandi Bahauddin offering gallbladder surgery, hernia repair, and minimally invasive general surgery.",
-  url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    "https://www.drkhawargondal.com",
   locale: "en_PK",
   twitterHandle: "@drkhawar",
 } as const;

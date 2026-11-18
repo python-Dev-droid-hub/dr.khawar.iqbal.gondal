@@ -13,9 +13,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
 import { webPageJsonLd } from "@/lib/structured-data";
 
-const pageTitle = "About Dr. Khawar Iqbal Gondal — Laparoscopic Surgeon in Gujrat";
+const pageTitle =
+  "Meet Dr. Khawar Iqbal Gondal – Experienced Laparoscopic & General Surgeon in Gujrat";
 const pageDescription =
-  "Meet Dr. Khawar Iqbal Gondal, FCPS laparoscopic and general surgeon, ex-Senior Registrar at Mayo Hospital, and Consultant Surgeon at Aziz Bhatti Shaheed Hospital since 2012.";
+  "Dr. Khawar Iqbal Gondal, an experienced laparoscopic and general surgeon in Gujrat and Mandi Bahauddin. With over 24 years of surgical experience, he provides expert surgical consultations, advanced minimally invasive procedures, and personalized patient care. Book your appointment today for trusted surgical guidance.";
 
 export const metadata: Metadata = createPageMetadata({
   title: pageTitle,

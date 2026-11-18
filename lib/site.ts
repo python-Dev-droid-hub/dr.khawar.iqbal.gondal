@@ -53,7 +53,8 @@ export function createPageMetadata({
   const ogAlt = imageAlt || `${doctor.name} — ${doctor.title}`;
 
   return {
-    title,
+    // Absolute titles avoid the layout "%s | Dr. Name" template doubling brand names
+    title: { absolute: title },
     description,
     keywords: [
       "laparoscopic surgeon in Gujrat",

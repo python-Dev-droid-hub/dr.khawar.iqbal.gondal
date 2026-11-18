@@ -1,47 +1,20 @@
 import type { MetadataRoute } from "next";
-import { posts } from "@/data/posts";
-import { servicePath, services } from "@/data/services";
 import { absoluteUrl } from "@/lib/site";
 
+/** Sitemap limited to pages with updated SEO metadata. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    "",
-    "/about",
-    "/services",
-    "/blog",
-    "/reviews",
-    "/faq",
-    "/contact",
-    "/book",
-    "/privacy",
-    "/terms",
-  ].map((path) => ({
-    url: absoluteUrl(path || "/"),
+  return [
+    { path: "", priority: 1, changeFrequency: "weekly" as const },
+    { path: "/about", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/reviews", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
+  ].map((route) => ({
+    url: absoluteUrl(route.path || "/"),
     lastModified: now,
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority:
-      path === ""
-        ? 1
-        : path === "/book" || path === "/services" || path === "/reviews"
-          ? 0.9
-          : 0.7,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
-
-  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
-    url: absoluteUrl(servicePath(service.slug)),
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: absoluteUrl(`/blog/${post.slug}`),
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...serviceRoutes, ...postRoutes];
 }

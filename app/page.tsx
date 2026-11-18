@@ -20,9 +20,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
 import { faqPageJsonLd, webPageJsonLd } from "@/lib/structured-data";
 
-const pageTitle = "Laparoscopic Surgeon in Gujrat & Mandi Bahauddin";
+const pageTitle =
+  "Book Expert Laparoscopic & General Surgeon in Gujrat & Mandi Bahauddin | Dr. Khawar Iqbal Gondal";
 const pageDescription =
-  "Book Dr. Khawar Iqbal Gondal, laparoscopic surgeon in Gujrat and Mandi Bahauddin, for gallbladder surgery, hernia repair, and minimally invasive care.";
+  "Looking for an expert laparoscopic surgeon in Gujrat or Mandi Bahauddin? Consult Dr. Khawar Iqbal Gondal for advanced keyhole surgery, gallbladder treatment, hernia repair, and personalized surgical care. Book your appointment today for expert consultation and trusted treatment.";
 
 export const metadata: Metadata = createPageMetadata({
   title: pageTitle,

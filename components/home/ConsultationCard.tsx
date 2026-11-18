@@ -20,8 +20,7 @@ export default function ConsultationCard() {
                   Quick Consultation
                 </p>
                 <h2 className="mt-2 font-serif text-[1.65rem] leading-tight text-heading sm:text-3xl">
-                  Surgical Consultation Locations in Gujrat &amp; Mandi
-                  Bahauddin
+                  Consultation Locations
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   Visit Dr. Khawar Iqbal Gondal for expert surgical
@@ -93,8 +92,7 @@ export default function ConsultationCard() {
                   Quick Consultation
                 </p>
                 <h2 className="mt-3 font-serif text-3xl text-heading md:text-4xl">
-                  Surgical Consultation Locations in Gujrat &amp; Mandi
-                  Bahauddin
+                  Consultation Locations
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   Visit Dr. Khawar Iqbal Gondal for expert surgical

@@ -14,8 +14,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
 import { webPageJsonLd } from "@/lib/structured-data";
 
-const pageTitle = "Contact Laparoscopic Surgeon in Gujrat & Mandi Bahauddin";
-const pageDescription = `Contact ${doctor.name} at Shifa Hospital Gujrat or Tarar Hospital Mandi Bahauddin for appointments and surgical consultations.`;
+const pageTitle =
+  "Contact Dr. Khawar Gondal | Book a General & Laparoscopic Surgeon Appointment in Gujrat";
+const pageDescription =
+  "Need expert surgical consultation in Gujrat or Mandi Bahauddin? Contact Dr. Khawar Iqbal Gondal for professional general and laparoscopic surgery services. Get in touch today to discuss your treatment needs, schedule a consultation, and book your appointment with an experienced surgeon.";
 
 export const metadata: Metadata = createPageMetadata({
   title: pageTitle,

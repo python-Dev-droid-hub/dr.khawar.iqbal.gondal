@@ -10,8 +10,10 @@ import { pageBanners } from "@/data/pageBanners";
 import { createPageMetadata, absoluteUrl } from "@/lib/site";
 import { webPageJsonLd } from "@/lib/structured-data";
 
-const pageTitle = "Patient Reviews — Dr. Khawar Iqbal Gondal";
-const pageDescription = `Read patient reviews and success stories for ${doctor.name}, laparoscopic surgeon in Gujrat and Mandi Bahauddin.`;
+const pageTitle =
+  "Dr. Khawar Gondal Reviews | Patient Experiences & Trusted Surgical Care in Gujrat";
+const pageDescription =
+  "Explore patient reviews and experiences with Dr. Khawar Iqbal Gondal, an experienced general and laparoscopic surgeon in Gujrat. Learn about patient feedback, professional care, and surgical consultation services. Read reviews and connect with the clinic to book your appointment.";
 
 export const metadata: Metadata = createPageMetadata({
   title: pageTitle,

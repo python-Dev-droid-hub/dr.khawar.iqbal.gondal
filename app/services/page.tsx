@@ -10,9 +10,10 @@ import JsonLd from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/site";
 import { webPageJsonLd } from "@/lib/structured-data";
 
-const pageTitle = "Surgical Services in Gujrat & Mandi Bahauddin";
+const pageTitle =
+  "Get Advanced Keyhole Surgery, Hernia Repair & Gallbladder Treatment in Gujrat";
 const pageDescription =
-  "Laparoscopic gallbladder surgery, hernia repair, appendix surgery, and general surgery with Dr. Khawar Iqbal Gondal in Gujrat and Mandi Bahauddin.";
+  "Looking for expert surgical treatment in Gujrat or Mandi Bahauddin? Consult Dr. Khawar Iqbal Gondal for laparoscopic surgery, gallbladder removal, hernia repair, piles treatment, and advanced general surgery. Explore professional surgical services and book your consultation today.";
 
 export const metadata: Metadata = createPageMetadata({
   title: pageTitle,
